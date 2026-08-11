@@ -58,6 +58,56 @@
 
         </section>
 
+        <section class="calculator">
+
+        <h2>Appliance Energy Calculator</h2>
+
+        <p>
+            Enter the appliance details below to estimate energy consumption and cost.
+        </p>
+
+        <div class="calculator-form">
+
+            <label for="power">Appliance Power (Watts)</label>
+            <input type="number" id="power" min="1" placeholder="Example: 150">
+
+            <label for="hours">Hours Used Per Day</label>
+            <input type="number" id="hours" min="0" max="24" step="0.1" placeholder="Example: 5">
+
+            <label for="price">Electricity Price (cents per kWh)</label>
+            <input type="number" id="price" min="0" step="0.01" placeholder="Example: 30">
+
+            <button type="button" id="calculate-btn">
+                Calculate
+            </button>
+
+        </div>
+
+        <div id="calculator-message"></div>
+
+        <div id="calculator-results" class="calculator-results">
+            <p>
+                <strong>Daily Energy:</strong>
+                <span id="daily-energy">0</span> kWh
+            </p>
+
+            <p>
+                <strong>Monthly Energy:</strong>
+                <span id="monthly-energy">0</span> kWh
+            </p>
+
+            <p>
+                <strong>Yearly Energy:</strong>
+                <span id="yearly-energy">0</span> kWh
+            </p>
+
+            <p>
+                <strong>Estimated Monthly Cost:</strong>
+                $<span id="monthly-cost">0</span>
+            </p>
+        </div>
+
+        </section>
 
         <section class="faq">
 

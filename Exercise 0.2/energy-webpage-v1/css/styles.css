@@ -159,3 +159,65 @@ footer p {
         font-size: 2rem;
     }
 }
+
+/* Energy Calculator */
+
+.calculator {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px 20px;
+    background-color: #fff2c7;
+    border-radius: 8px;
+}
+
+.calculator h2 {
+    margin-bottom: 10px;
+    color: #4f3f24;
+}
+
+.calculator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.calculator-form label {
+    font-weight: bold;
+}
+
+.calculator-form input {
+    padding: 10px;
+    border: 1px solid #d8c18a;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#calculate-btn {
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f5a623;
+    color: #2f2f2f;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#calculate-btn:hover {
+    background-color: #e69414;
+}
+
+.calculator-results {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #d8c18a;
+    border-radius: 5px;
+}
+
+#calculator-message {
+    margin-top: 15px;
+    font-weight: bold;
+}
