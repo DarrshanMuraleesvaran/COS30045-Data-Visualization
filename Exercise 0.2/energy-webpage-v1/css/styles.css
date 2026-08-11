@@ -1,0 +1,161 @@
+/* General page styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fffdf7;
+    color: #2f2f2f;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4f3f24;
+    padding: 10px 40px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #f5a623;
+    color: #2f2f2f;
+}
+
+.nav-links a.active {
+    background-color: #f5a623;
+    color: #2f2f2f;
+}
+
+/* Main content */
+main {
+    min-height: 75vh;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffe9a6;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.energy-info {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.energy-info h2 {
+    margin-bottom: 15px;
+    color: #4f3f24;
+}
+
+.energy-info p {
+    margin-bottom: 15px;
+}
+
+/* FAQ section */
+.faq {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px 40px;
+}
+
+.faq h2 {
+    margin-bottom: 20px;
+    color: #4f3f24;
+}
+
+.faq-item {
+    margin-bottom: 12px;
+    border: 1px solid #d8c18a;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    border: none;
+    background-color: #fff2c7;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.faq-question:hover {
+    background-color: #ffe29a;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px;
+    background-color: #ffffff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #4f3f24;
+    color: #ffffff;
+    padding: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
