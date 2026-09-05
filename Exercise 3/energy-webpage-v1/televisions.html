@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Televisions | Appliance Energy Consumption</title>
 
     <link rel="stylesheet" href="css/styles.css">
@@ -11,12 +12,24 @@
 
 <body>
 
-    <header>
+    <header class="site-header">
+
         <nav class="navbar">
 
-            <a href="index.html" class="logo-link">
-                <img src="images/PowerIcon.png" alt="Power logo" class="logo">
+            <a href="index.html" class="brand">
+
+                <img
+                    src="images/PowerIcon.png"
+                    alt="Power logo"
+                    class="logo">
+
+                <div class="brand-text">
+                    <span class="brand-title">ENERGY VIEW</span>
+                    <span class="brand-subtitle">TV Energy Insights</span>
+                </div>
+
             </a>
+
 
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -26,47 +39,184 @@
             </ul>
 
         </nav>
+
     </header>
+
 
     <main>
 
-        <section class="hero">
-            <h1>Television Energy Consumption</h1>
+        <!-- HERO -->
 
-            <p>
-                Learn how different televisions can vary in electricity usage
-                and what factors influence their energy consumption.
-            </p>
+        <section class="page-hero">
+
+            <div class="page-hero-content">
+
+                <p class="eyebrow">TELEVISION ENERGY</p>
+
+                <h1>
+                    What influences how much energy a television uses?
+                </h1>
+
+                <p>
+                    TV energy consumption is shaped by more than one feature.
+                    Screen size, display technology and usage behaviour can all
+                    influence the final result.
+                </p>
+
+            </div>
+
         </section>
 
-        <section class="energy-info">
 
-            <h2>How Televisions Use Energy</h2>
+        <!-- MAIN EXPLANATION -->
 
-            <p>
-                Television energy consumption can vary depending on screen size,
-                display technology, brightness settings, viewing time and power
-                management settings.
-            </p>
+        <section class="section-container">
 
-            <p>
-                This page will be expanded in later exercises to include data
-                and visualisations relating to television energy consumption.
-            </p>
+            <div class="section-heading">
+
+                <p class="eyebrow">THE BIG PICTURE</p>
+
+                <h2>
+                    Not every television uses energy in the same way.
+                </h2>
+
+                <p>
+                    Two televisions can look similar but consume different
+                    amounts of electricity. Understanding the variables behind
+                    those differences helps make the data more meaningful.
+                </p>
+
+            </div>
+
+
+            <div class="factor-grid">
+
+                <article class="factor-card">
+
+                    <div class="factor-icon">↔</div>
+
+                    <p class="factor-label">FACTOR 01</p>
+
+                    <h3>Screen Size</h3>
+
+                    <p>
+                        Larger screens generally require more energy to operate
+                        because more display area must be illuminated.
+                    </p>
+
+                </article>
+
+
+                <article class="factor-card">
+
+                    <div class="factor-icon">◫</div>
+
+                    <p class="factor-label">FACTOR 02</p>
+
+                    <h3>Display Technology</h3>
+
+                    <p>
+                        LCD, LED-backlit LCD and OLED technologies differ in how
+                        images are produced and how energy is consumed.
+                    </p>
+
+                </article>
+
+
+                <article class="factor-card">
+
+                    <div class="factor-icon">☀</div>
+
+                    <p class="factor-label">FACTOR 03</p>
+
+                    <h3>Brightness</h3>
+
+                    <p>
+                        Brighter screen settings can increase power demand,
+                        particularly during long periods of viewing.
+                    </p>
+
+                </article>
+
+
+                <article class="factor-card">
+
+                    <div class="factor-icon">◷</div>
+
+                    <p class="factor-label">FACTOR 04</p>
+
+                    <h3>Viewing Time</h3>
+
+                    <p>
+                        A highly efficient television can still consume
+                        substantial energy when used for many hours every day.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- DATA STORY CTA -->
+
+        <section class="insight-banner">
+
+            <div>
+
+                <p class="eyebrow">FROM THEORY TO DATA</p>
+
+                <h2>
+                    So what does our dataset actually show?
+                </h2>
+
+                <p>
+                    We explored two questions: whether newer display technology
+                    means lower energy consumption, and whether larger TVs
+                    generally use more energy.
+                </p>
+
+            </div>
+
+
+            <a href="storyboard.html" class="button button-dark">
+                View the Storyboard
+            </a>
 
         </section>
 
     </main>
 
-    <footer>
-        <p>&copy; 2026 Darrshan Muraleesvaran</p>
 
-        <p>
-            Generative AI was used to assist with the development of this website.
-        </p>
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div>
+
+                <p class="footer-brand">ENERGY VIEW</p>
+
+                <p class="footer-description">
+                    COS30045 Data Visualisation
+                </p>
+
+            </div>
+
+
+            <div class="footer-meta">
+
+                <p>&copy; 2026 Darrshan Muraleesvaran</p>
+
+                <p>
+                    Generative AI was used to assist with the development of this website.
+                </p>
+
+            </div>
+
+        </div>
+
     </footer>
-
-    <script src="js/scripts.js"></script>
 
 </body>
 
