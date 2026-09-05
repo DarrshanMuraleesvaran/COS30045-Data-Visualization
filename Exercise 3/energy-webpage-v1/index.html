@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appliance Energy Consumption</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+
+            <a href="index.html" class="logo-link">
+                <img src="images/PowerIcon.png" alt="Power logo" class="logo">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="televisions.html">Televisions</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <h1>Appliance Energy Consumption</h1>
+
+            <p>
+                Explore how household appliances use electricity and learn more
+                about energy consumption in the Australian market.
+            </p>
+        </section>
+
+
+        <section class="energy-info">
+
+            <h2>Understanding Appliance Energy Usage</h2>
+
+            <p>
+                Household appliances contribute significantly to electricity
+                consumption. Understanding how much energy different appliances
+                use can help households make more informed decisions about
+                electricity usage and energy efficiency.
+            </p>
+
+            <p>
+                This website provides information about appliance energy
+                consumption, starting with televisions and expanding to other
+                household appliances in future exercises.
+            </p>
+
+        </section>
+
+        <section class="calculator">
+
+        <h2>Appliance Energy Calculator</h2>
+
+        <p>
+            Enter the appliance details below to estimate energy consumption and cost.
+        </p>
+
+        <div class="calculator-form">
+
+            <label for="power">Appliance Power (Watts)</label>
+            <input type="number" id="power" min="1" placeholder="Example: 150">
+
+            <label for="hours">Hours Used Per Day</label>
+            <input type="number" id="hours" min="0" max="24" step="0.1" placeholder="Example: 5">
+
+            <label for="price">Electricity Price (cents per kWh)</label>
+            <input type="number" id="price" min="0" step="0.01" placeholder="Example: 30">
+
+            <button type="button" id="calculate-btn">
+                Calculate
+            </button>
+
+        </div>
+
+        <div id="calculator-message"></div>
+
+        <div id="calculator-results" class="calculator-results">
+            <p>
+                <strong>Daily Energy:</strong>
+                <span id="daily-energy">0</span> kWh
+            </p>
+
+            <p>
+                <strong>Monthly Energy:</strong>
+                <span id="monthly-energy">0</span> kWh
+            </p>
+
+            <p>
+                <strong>Yearly Energy:</strong>
+                <span id="yearly-energy">0</span> kWh
+            </p>
+
+            <p>
+                <strong>Estimated Monthly Cost:</strong>
+                $<span id="monthly-cost">0</span>
+            </p>
+        </div>
+
+        </section>
+
+        <section class="faq">
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    What is appliance energy consumption?
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        Appliance energy consumption refers to the amount of
+                        electrical energy used by an appliance during operation.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Why is energy efficiency important?
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        Energy-efficient appliances can reduce electricity
+                        consumption and may help households lower their energy
+                        costs over time.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Do different televisions use different amounts of energy?
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        Yes. Television energy usage can vary depending on factors
+                        such as screen size, display technology, brightness,
+                        power settings and usage time.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            &copy; 2026 Darrshan Muraleesvaran
+        </p>
+
+        <p>
+            Generative AI was used to assist with the development of this website.
+        </p>
+    </footer>
+
+
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
