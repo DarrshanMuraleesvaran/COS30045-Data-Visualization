@@ -23,10 +23,6 @@
             color: #1f2933;
         }
 
-        /* -----------------------------
-           HEADER
-        ----------------------------- */
-
         header {
             background: linear-gradient(135deg, #17212b, #253544);
             color: white;
@@ -84,10 +80,6 @@
             background: #ffffff;
             color: #17212b;
         }
-
-        /* -----------------------------
-           MAIN CONTENT
-        ----------------------------- */
 
         main {
             max-width: 1180px;
@@ -148,16 +140,13 @@
             color: #40525f;
         }
 
-        /* -----------------------------
-           SVG DISPLAY
-        ----------------------------- */
-
         .svg-section {
             background: white;
             border: 1px solid #dce4e9;
             border-radius: 20px;
             padding: 28px;
             box-shadow: 0 14px 34px rgba(28, 47, 61, 0.08);
+            margin-bottom: 34px;
         }
 
         .section-heading {
@@ -181,6 +170,20 @@
             line-height: 1.6;
         }
 
+        .step-label {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #47758d;
+            background: #edf7fb;
+            border: 1px solid #d2e9f2;
+            padding: 7px 10px;
+            border-radius: 999px;
+            margin-bottom: 10px;
+        }
+
         .svg-wrapper {
             overflow-x: auto;
             border-radius: 16px;
@@ -195,9 +198,25 @@
             min-width: 720px;
         }
 
-        /* -----------------------------
-           PAGE LINK
-        ----------------------------- */
+        .changes-panel {
+            margin-top: 24px;
+            background: #f7fafc;
+            border: 1px solid #dce7ec;
+            border-radius: 14px;
+            padding: 22px;
+        }
+
+        .changes-panel h3 {
+            margin-top: 0;
+            color: #1d3442;
+        }
+
+        .changes-panel ul {
+            margin-bottom: 0;
+            padding-left: 20px;
+            color: #53636f;
+            line-height: 1.75;
+        }
 
         .next-section {
             margin-top: 30px;
@@ -220,10 +239,6 @@
             transform: translateY(-2px);
             background: #2b5268;
         }
-
-        /* -----------------------------
-           DECLARATION
-        ----------------------------- */
 
         footer {
             background: #17212b;
@@ -295,8 +310,8 @@
 
         <p>
             Exercise 4.1 explores the use of SVG shapes, coordinates,
-            fills, strokes, paths and text by creating a simple illustrated
-            house and garden.
+            fills, strokes, paths and text by creating and customising
+            a house and garden illustration.
         </p>
 
         <nav>
@@ -356,7 +371,11 @@
     </section>
 
 
+    <!-- ORIGINAL VERSION -->
+
     <section class="svg-section">
+
+        <span class="step-label">Original Version</span>
 
         <div class="section-heading">
 
@@ -365,8 +384,8 @@
             </div>
 
             <p>
-                The drawing below demonstrates how multiple SVG elements
-                can be positioned and styled within one SVG canvas.
+                This is the original SVG illustration before Step 3
+                customisation was applied.
             </p>
 
         </div>
@@ -379,55 +398,18 @@
                  viewBox="0 0 900 600">
 
                 <!-- SKY -->
-                <rect
-                    x="0"
-                    y="0"
-                    width="900"
-                    height="600"
-                    fill="#87ceeb"
-                />
+                <rect x="0" y="0" width="900" height="600" fill="#87ceeb" />
 
                 <!-- SUN -->
-                <circle
-                    cx="760"
-                    cy="100"
-                    r="55"
-                    fill="#ffd93d"
-                />
+                <circle cx="760" cy="100" r="55" fill="#ffd93d" />
 
                 <!-- CLOUD -->
-                <ellipse
-                    cx="130"
-                    cy="105"
-                    rx="55"
-                    ry="25"
-                    fill="white"
-                />
-
-                <ellipse
-                    cx="175"
-                    cy="100"
-                    rx="50"
-                    ry="30"
-                    fill="white"
-                />
-
-                <ellipse
-                    cx="150"
-                    cy="80"
-                    rx="40"
-                    ry="30"
-                    fill="white"
-                />
+                <ellipse cx="130" cy="105" rx="55" ry="25" fill="white" />
+                <ellipse cx="175" cy="100" rx="50" ry="30" fill="white" />
+                <ellipse cx="150" cy="80" rx="40" ry="30" fill="white" />
 
                 <!-- GRASS -->
-                <rect
-                    x="0"
-                    y="360"
-                    width="900"
-                    height="240"
-                    fill="#48a63f"
-                />
+                <rect x="0" y="360" width="900" height="240" fill="#48a63f" />
 
                 <!-- HOUSE BODY -->
                 <rect
@@ -469,12 +451,7 @@
                 />
 
                 <!-- DOOR KNOB -->
-                <circle
-                    cx="485"
-                    cy="450"
-                    r="6"
-                    fill="#f2c94c"
-                />
+                <circle cx="485" cy="450" r="6" fill="#f2c94c" />
 
                 <!-- LEFT WINDOW -->
                 <rect
@@ -561,36 +538,16 @@
                 />
 
                 <!-- TREE LEAVES -->
-                <ellipse
-                    cx="105"
-                    cy="295"
-                    rx="55"
-                    ry="50"
-                    fill="#2f8f3a"
-                />
-
-                <ellipse
-                    cx="150"
-                    cy="285"
-                    rx="55"
-                    ry="55"
-                    fill="#287d35"
-                />
-
-                <ellipse
-                    cx="125"
-                    cy="250"
-                    rx="60"
-                    ry="50"
-                    fill="#319b41"
-                />
+                <ellipse cx="105" cy="295" rx="55" ry="50" fill="#2f8f3a" />
+                <ellipse cx="150" cy="285" rx="55" ry="55" fill="#287d35" />
+                <ellipse cx="125" cy="250" rx="60" ry="50" fill="#319b41" />
 
                 <!-- FLOWERS -->
                 <circle cx="720" cy="470" r="10" fill="#ff4b91" />
                 <circle cx="750" cy="490" r="10" fill="#f7d154" />
                 <circle cx="785" cy="465" r="10" fill="#9b51e0" />
 
-                <!-- FLOWER STEMS -->
+                <!-- STEMS -->
                 <line x1="720" y1="480" x2="720" y2="515"
                       stroke="#1f7a36" stroke-width="4" />
 
@@ -631,10 +588,409 @@
 
         </div>
 
+    </section>
+
+
+    <!-- CUSTOMISED VERSION -->
+
+    <section class="svg-section">
+
+        <span class="step-label">Step 3 · Customised Version</span>
+
+        <div class="section-heading">
+
+            <div>
+                <h2>Customised House and Garden</h2>
+            </div>
+
+            <p>
+                This version demonstrates changes to fill colours,
+                stroke properties, positions and additional SVG elements.
+            </p>
+
+        </div>
+
+
+        <div class="svg-wrapper">
+
+            <svg width="900"
+                 height="600"
+                 viewBox="0 0 900 600">
+
+                <!-- SKY -->
+                <rect
+                    x="0"
+                    y="0"
+                    width="900"
+                    height="600"
+                    fill="#8fd3ea"
+                />
+
+                <!-- SUN -->
+                <circle
+                    cx="760"
+                    cy="95"
+                    r="50"
+                    fill="#ffd166"
+                    stroke="#e0aa36"
+                    stroke-width="3"
+                />
+
+                <!-- ORIGINAL CLOUD -->
+                <ellipse cx="130" cy="105" rx="55" ry="25" fill="#ffffff" />
+                <ellipse cx="175" cy="100" rx="50" ry="30" fill="#ffffff" />
+                <ellipse cx="150" cy="80" rx="40" ry="30" fill="#ffffff" />
+
+                <!-- SECOND CLOUD -->
+                <ellipse
+                    cx="650"
+                    cy="150"
+                    rx="35"
+                    ry="18"
+                    fill="#ffffff"
+                    opacity="0.92"
+                />
+
+                <ellipse
+                    cx="680"
+                    cy="150"
+                    rx="30"
+                    ry="20"
+                    fill="#ffffff"
+                    opacity="0.92"
+                />
+
+                <ellipse
+                    cx="665"
+                    cy="135"
+                    rx="28"
+                    ry="20"
+                    fill="#ffffff"
+                    opacity="0.92"
+                />
+
+                <!-- GRASS -->
+                <rect
+                    x="0"
+                    y="360"
+                    width="900"
+                    height="240"
+                    fill="#4caf50"
+                />
+
+                <!-- HOUSE BODY -->
+                <rect
+                    x="300"
+                    y="250"
+                    width="320"
+                    height="260"
+                    fill="#6ec1e4"
+                    stroke="#3a7ea1"
+                    stroke-width="5"
+                />
+
+                <!-- ROOF -->
+                <polygon
+                    points="260,250 460,90 660,250"
+                    fill="#7a3f22"
+                    stroke="#542914"
+                    stroke-width="5"
+                />
+
+                <!-- CHIMNEY MOVED TO LEFT SIDE -->
+                <rect
+                    x="360"
+                    y="125"
+                    width="50"
+                    height="95"
+                    fill="#8a4f32"
+                    stroke="#5d321f"
+                    stroke-width="3"
+                />
+
+                <!-- CHIMNEY CAP -->
+                <rect
+                    x="353"
+                    y="118"
+                    width="64"
+                    height="12"
+                    rx="3"
+                    fill="#68402b"
+                />
+
+                <!-- DOOR -->
+                <rect
+                    x="425"
+                    y="380"
+                    width="75"
+                    height="130"
+                    fill="#6f3d26"
+                    stroke="#4f2c1c"
+                    stroke-width="4"
+                />
+
+                <!-- DOOR KNOB -->
+                <circle
+                    cx="485"
+                    cy="450"
+                    r="7"
+                    fill="#f2c94c"
+                    stroke="#b28a1a"
+                    stroke-width="2"
+                />
+
+                <!-- LEFT WINDOW -->
+                <rect
+                    x="340"
+                    y="310"
+                    width="70"
+                    height="70"
+                    fill="#c8ecff"
+                    stroke="#4b3728"
+                    stroke-width="4"
+                />
+
+                <line
+                    x1="375"
+                    y1="310"
+                    x2="375"
+                    y2="380"
+                    stroke="#4b3728"
+                    stroke-width="3"
+                />
+
+                <line
+                    x1="340"
+                    y1="345"
+                    x2="410"
+                    y2="345"
+                    stroke="#4b3728"
+                    stroke-width="3"
+                />
+
+                <!-- RIGHT WINDOW -->
+                <rect
+                    x="515"
+                    y="310"
+                    width="70"
+                    height="70"
+                    fill="#c8ecff"
+                    stroke="#4b3728"
+                    stroke-width="4"
+                />
+
+                <line
+                    x1="550"
+                    y1="310"
+                    x2="550"
+                    y2="380"
+                    stroke="#4b3728"
+                    stroke-width="3"
+                />
+
+                <line
+                    x1="515"
+                    y1="345"
+                    x2="585"
+                    y2="345"
+                    stroke="#4b3728"
+                    stroke-width="3"
+                />
+
+                <!-- WALKWAY -->
+                <path
+                    d="
+                        M 460 510
+                        C 430 530,
+                          350 540,
+                          360 600
+                        L 520 600
+                        C 530 560,
+                          500 530,
+                          460 510
+                    "
+                    fill="#d8b57c"
+                    stroke="#9d7544"
+                    stroke-width="5"
+                />
+
+                <!-- TREE TRUNK -->
+                <rect
+                    x="120"
+                    y="315"
+                    width="35"
+                    height="150"
+                    fill="#8b542d"
+                    stroke="#6d3d1f"
+                    stroke-width="2"
+                />
+
+                <!-- TREE LEAVES -->
+                <ellipse cx="105" cy="295" rx="55" ry="50" fill="#2f8f3a" />
+                <ellipse cx="150" cy="285" rx="55" ry="55" fill="#287d35" />
+                <ellipse cx="125" cy="250" rx="60" ry="50" fill="#319b41" />
+
+                <!-- LEFT BUSH -->
+                <ellipse
+                    cx="255"
+                    cy="465"
+                    rx="45"
+                    ry="28"
+                    fill="#2f8b45"
+                    stroke="#246a36"
+                    stroke-width="3"
+                />
+
+                <!-- RIGHT BUSH -->
+                <ellipse
+                    cx="650"
+                    cy="470"
+                    rx="48"
+                    ry="30"
+                    fill="#2f8b45"
+                    stroke="#246a36"
+                    stroke-width="3"
+                />
+
+                <!-- CUSTOM FLOWERS -->
+                <circle cx="720" cy="455" r="10" fill="#ff4b91" />
+                <circle cx="755" cy="475" r="10" fill="#f7d154" />
+                <circle cx="790" cy="450" r="10" fill="#9b51e0" />
+
+                <!-- STEMS -->
+                <line x1="720" y1="465" x2="720" y2="515"
+                      stroke="#1f7a36" stroke-width="4" />
+
+                <line x1="755" y1="485" x2="755" y2="525"
+                      stroke="#1f7a36" stroke-width="4" />
+
+                <line x1="790" y1="460" x2="790" y2="515"
+                      stroke="#1f7a36" stroke-width="4" />
+
+                <!-- LEAVES -->
+                <ellipse
+                    cx="710"
+                    cy="490"
+                    rx="10"
+                    ry="5"
+                    fill="#2e8b57"
+                    transform="rotate(-25 710 490)"
+                />
+
+                <ellipse
+                    cx="765"
+                    cy="500"
+                    rx="10"
+                    ry="5"
+                    fill="#2e8b57"
+                    transform="rotate(25 765 500)"
+                />
+
+                <ellipse
+                    cx="780"
+                    cy="485"
+                    rx="10"
+                    ry="5"
+                    fill="#2e8b57"
+                    transform="rotate(-25 780 485)"
+                />
+
+                <!-- FENCE -->
+                <polyline
+                    points="
+                        30,470
+                        30,400
+                        60,400
+                        60,470
+                        90,470
+                        90,400
+                        120,400
+                    "
+                    fill="none"
+                    stroke="#fff7e6"
+                    stroke-width="8"
+                />
+
+                <!-- TEXT -->
+                <text
+                    x="450"
+                    y="570"
+                    text-anchor="middle"
+                    font-size="28"
+                    font-weight="bold"
+                    fill="#ffffff">
+                    Home Sweet Home
+                </text>
+
+            </svg>
+
+        </div>
+
+
+        <!-- STEP 3 CHANGES MADE -->
+
+        <div class="changes-panel">
+
+            <h3>Step 3 — Changes Made</h3>
+
+            <ul>
+                <li>
+                    Changed the house body fill colour from orange to sky blue.
+                </li>
+
+                <li>
+                    Changed the house outline to a darker blue stroke for stronger contrast.
+                </li>
+
+                <li>
+                    Changed the roof fill colour and increased the roof stroke width.
+                </li>
+
+                <li>
+                    Moved the chimney from the right side of the roof to the left side.
+                </li>
+
+                <li>
+                    Added a chimney cap using an additional rectangle element.
+                </li>
+
+                <li>
+                    Adjusted the sun position, size and stroke.
+                </li>
+
+                <li>
+                    Added a second cloud using multiple ellipse elements.
+                </li>
+
+                <li>
+                    Added bushes on both sides of the house.
+                </li>
+
+                <li>
+                    Repositioned the flowers and added leaves.
+                </li>
+
+                <li>
+                    Used the transform attribute to rotate the flower leaves.
+                </li>
+
+                <li>
+                    Changed the walkway fill, stroke colour and stroke width.
+                </li>
+
+                <li>
+                    Added additional stroke styling to the tree trunk and door knob.
+                </li>
+            </ul>
+
+        </div>
+
         <div class="next-section">
+
             <a href="svg-coordinates.html" class="button-link">
                 View SVG Coordinate Examples →
             </a>
+
         </div>
 
     </section>
@@ -654,17 +1010,30 @@
                 Generative AI, specifically ChatGPT, was used to assist
                 with the development of this exercise. AI assistance was
                 used for guidance on SVG syntax, webpage styling,
-                coordinate explanations and code structure. The generated
-                material was reviewed, tested and adapted before being
-                included in the final work.
+                coordinate explanations, customisation ideas and code
+                structure. The generated material was reviewed, tested
+                and adapted before being included in the final work.
             </p>
 
         </div>
 
         <div class="student-details">
-            <span><strong>Name:</strong> Darrshan A/L Muraleesvaran</span>
-            <span><strong>Student ID:</strong> 105965528</span>
-            <span><strong>Unit:</strong> COS30045 Data Visualisation</span>
+
+            <span>
+                <strong>Name:</strong>
+                Darrshan A/L Muraleesvaran
+            </span>
+
+            <span>
+                <strong>Student ID:</strong>
+                105965528
+            </span>
+
+            <span>
+                <strong>Unit:</strong>
+                COS30045 Data Visualisation
+            </span>
+
         </div>
 
     </div>
