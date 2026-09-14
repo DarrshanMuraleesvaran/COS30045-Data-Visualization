@@ -310,8 +310,8 @@
 
         <p>
             Exercise 4.1 explores the use of SVG shapes, coordinates,
-            fills, strokes, paths and text by creating and customising
-            a house and garden illustration.
+            fills, strokes, paths, text, groups and transformations by
+            creating and customising a house and garden illustration.
         </p>
 
         <nav>
@@ -384,8 +384,8 @@
             </div>
 
             <p>
-                This is the original SVG illustration before Step 3
-                customisation was applied.
+                This is the original SVG illustration before the
+                customisation and grouping changes were applied.
             </p>
 
         </div>
@@ -591,11 +591,11 @@
     </section>
 
 
-    <!-- CUSTOMISED VERSION -->
+    <!-- CUSTOMISED + GROUPED VERSION -->
 
     <section class="svg-section">
 
-        <span class="step-label">Step 3 · Customised Version</span>
+        <span class="step-label">Step 3 & 4 · Customised + Grouped Version</span>
 
         <div class="section-heading">
 
@@ -604,8 +604,8 @@
             </div>
 
             <p>
-                This version demonstrates changes to fill colours,
-                stroke properties, positions and additional SVG elements.
+                This version demonstrates visual customisation together
+                with SVG grouping and translation of the two windows.
             </p>
 
         </div>
@@ -697,7 +697,7 @@
                     stroke-width="5"
                 />
 
-                <!-- CHIMNEY MOVED TO LEFT SIDE -->
+                <!-- CHIMNEY MOVED TO LEFT -->
                 <rect
                     x="360"
                     y="125"
@@ -739,63 +739,77 @@
                     stroke-width="2"
                 />
 
-                <!-- LEFT WINDOW -->
-                <rect
-                    x="340"
-                    y="310"
-                    width="70"
-                    height="70"
+
+                <!-- ====================================== -->
+                <!-- STEP 4: GROUPED WINDOWS -->
+                <!-- ====================================== -->
+
+                <g
                     fill="#c8ecff"
                     stroke="#4b3728"
-                    stroke-width="4"
-                />
+                >
 
-                <line
-                    x1="375"
-                    y1="310"
-                    x2="375"
-                    y2="380"
-                    stroke="#4b3728"
-                    stroke-width="3"
-                />
+                    <!-- LEFT WINDOW -->
+                    <g transform="translate(340, 310)">
 
-                <line
-                    x1="340"
-                    y1="345"
-                    x2="410"
-                    y2="345"
-                    stroke="#4b3728"
-                    stroke-width="3"
-                />
+                        <rect
+                            x="0"
+                            y="0"
+                            width="70"
+                            height="70"
+                            stroke-width="4"
+                        />
 
-                <!-- RIGHT WINDOW -->
-                <rect
-                    x="515"
-                    y="310"
-                    width="70"
-                    height="70"
-                    fill="#c8ecff"
-                    stroke="#4b3728"
-                    stroke-width="4"
-                />
+                        <line
+                            x1="35"
+                            y1="0"
+                            x2="35"
+                            y2="70"
+                            stroke-width="3"
+                        />
 
-                <line
-                    x1="550"
-                    y1="310"
-                    x2="550"
-                    y2="380"
-                    stroke="#4b3728"
-                    stroke-width="3"
-                />
+                        <line
+                            x1="0"
+                            y1="35"
+                            x2="70"
+                            y2="35"
+                            stroke-width="3"
+                        />
 
-                <line
-                    x1="515"
-                    y1="345"
-                    x2="585"
-                    y2="345"
-                    stroke="#4b3728"
-                    stroke-width="3"
-                />
+                    </g>
+
+
+                    <!-- RIGHT WINDOW -->
+                    <g transform="translate(515, 310)">
+
+                        <rect
+                            x="0"
+                            y="0"
+                            width="70"
+                            height="70"
+                            stroke-width="4"
+                        />
+
+                        <line
+                            x1="35"
+                            y1="0"
+                            x2="35"
+                            y2="70"
+                            stroke-width="3"
+                        />
+
+                        <line
+                            x1="0"
+                            y1="35"
+                            x2="70"
+                            y2="35"
+                            stroke-width="3"
+                        />
+
+                    </g>
+
+                </g>
+
 
                 <!-- WALKWAY -->
                 <path
@@ -927,11 +941,11 @@
         </div>
 
 
-        <!-- STEP 3 CHANGES MADE -->
+        <!-- STEP 3 AND STEP 4 CHANGES -->
 
         <div class="changes-panel">
 
-            <h3>Step 3 — Changes Made</h3>
+            <h3>Step 3 & 4 — Changes Made</h3>
 
             <ul>
                 <li>
@@ -981,9 +995,27 @@
                 <li>
                     Added additional stroke styling to the tree trunk and door knob.
                 </li>
+
+                <li>
+                    Grouped both windows using the SVG
+                    <strong>&lt;g&gt;</strong> element so shared styling
+                    could be applied consistently.
+                </li>
+
+                <li>
+                    Used
+                    <strong>transform="translate(...)"</strong>
+                    to position the left and right window groups.
+                </li>
+
+                <li>
+                    Rebuilt each window using local coordinates beginning at
+                    <strong>(0,0)</strong> inside its own group.
+                </li>
             </ul>
 
         </div>
+
 
         <div class="next-section">
 
@@ -1010,9 +1042,10 @@
                 Generative AI, specifically ChatGPT, was used to assist
                 with the development of this exercise. AI assistance was
                 used for guidance on SVG syntax, webpage styling,
-                coordinate explanations, customisation ideas and code
-                structure. The generated material was reviewed, tested
-                and adapted before being included in the final work.
+                coordinate explanations, customisation ideas, grouping,
+                transformations and code structure. The generated material
+                was reviewed, tested and adapted before being included in
+                the final work.
             </p>
 
         </div>
