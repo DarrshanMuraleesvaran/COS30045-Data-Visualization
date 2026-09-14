@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exercise 4.1 - SVG Coordinate Examples</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                linear-gradient(180deg, #eef6fa 0%, #f7f9fb 45%, #ffffff 100%);
+            color: #1f2933;
+        }
+
+        header {
+            background: linear-gradient(135deg, #17212b, #253544);
+            color: white;
+            padding: 28px 24px;
+            border-bottom: 4px solid #67b7d1;
+        }
+
+        .header-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+            color: #9fd8eb;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: clamp(30px, 5vw, 48px);
+            line-height: 1.1;
+        }
+
+        header p {
+            max-width: 760px;
+            color: #d4dde5;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.16);
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.2s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: white;
+            color: #17212b;
+        }
+
+        main {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 48px 22px 64px;
+        }
+
+        .intro {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid #dde6eb;
+            box-shadow: 0 14px 34px rgba(28, 47, 61, 0.08);
+            margin-bottom: 34px;
+        }
+
+        .intro h2 {
+            margin-top: 0;
+            color: #1d3442;
+            font-size: 28px;
+        }
+
+        .intro p {
+            color: #53636f;
+            line-height: 1.75;
+        }
+
+        .coordinate-box {
+            margin-top: 20px;
+            background: #edf8fc;
+            border-left: 5px solid #65abc4;
+            padding: 18px;
+            border-radius: 10px;
+            color: #40525f;
+            line-height: 1.7;
+        }
+
+        .examples {
+            display: grid;
+            gap: 32px;
+        }
+
+        .example-card {
+            background: white;
+            border: 1px solid #dce4e9;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 14px 34px rgba(28, 47, 61, 0.08);
+        }
+
+        .example-content {
+            padding: 28px 30px 18px;
+        }
+
+        .number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #1d3442;
+            color: white;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .example-content h2 {
+            display: inline;
+            color: #1d3442;
+            font-size: 25px;
+        }
+
+        .example-content p {
+            color: #586974;
+            line-height: 1.75;
+            margin-bottom: 0;
+        }
+
+        .image-wrapper {
+            padding: 10px 24px 28px;
+        }
+
+        .image-wrapper img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #b9c7ce;
+            background: #f1f5f7;
+        }
+
+        .back-link {
+            display: flex;
+            justify-content: center;
+            margin-top: 34px;
+        }
+
+        .button-link {
+            display: inline-block;
+            text-decoration: none;
+            padding: 14px 22px;
+            border-radius: 12px;
+            background: #1d3442;
+            color: white;
+            font-weight: bold;
+            transition: 0.2s ease;
+        }
+
+        .button-link:hover {
+            transform: translateY(-2px);
+            background: #2b5268;
+        }
+
+        footer {
+            background: #17212b;
+            color: #e5edf2;
+            padding: 42px 22px;
+        }
+
+        .footer-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .declaration {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 20px;
+        }
+
+        .declaration h2 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .declaration p {
+            margin-bottom: 0;
+            line-height: 1.7;
+            color: #cbd7df;
+        }
+
+        .student-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 30px;
+            color: #c5d1d8;
+            font-size: 14px;
+        }
+
+        .student-details strong {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <div class="eyebrow">COS30045 · Data Visualisation</div>
+
+        <h1>SVG Coordinate Examples</h1>
+
+        <p>
+            Annotated examples showing how SVG coordinate values,
+            dimensions and path instructions relate to the shapes
+            displayed in the house and garden illustration.
+        </p>
+
+        <nav>
+            <a href="index.html">House & Garden</a>
+            <a href="svg-coordinates.html" class="active">SVG Coordinates</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="intro">
+
+        <h2>Understanding SVG Coordinates</h2>
+
+        <p>
+            SVG elements are positioned inside their own coordinate system.
+            In this exercise, the SVG uses a viewBox beginning at
+            coordinate (0,0), which represents the top-left corner.
+        </p>
+
+        <div class="coordinate-box">
+
+            <strong>Coordinate direction</strong><br><br>
+
+            (0,0) = top-left corner<br>
+            X values increase towards the right<br>
+            Y values increase downwards
+
+        </div>
+
+    </section>
+
+
+    <section class="examples">
+
+
+        <!-- SCREENSHOT 1 -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="number">1</span>
+                <h2>Rectangle, Circle and Ellipse</h2>
+
+                <p>
+                    This example demonstrates how rectangles use
+                    x and y coordinates together with width and height.
+                    Circles use centre coordinates and a radius, while
+                    ellipses use centre coordinates together with
+                    horizontal and vertical radii.
+                </p>
+
+            </div>
+
+            <div class="image-wrapper">
+
+                <img
+                    src="Images/screenshot1.png"
+                    alt="Annotated SVG rectangle, circle and ellipse coordinate examples"
+                >
+
+            </div>
+
+        </article>
+
+
+        <!-- SCREENSHOT 2 -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="number">2</span>
+                <h2>Line, Polygon and Polyline</h2>
+
+                <p>
+                    A line uses a starting coordinate and an ending
+                    coordinate. A polygon joins multiple points and
+                    automatically forms a closed shape. A polyline also
+                    connects multiple coordinate points, but does not
+                    automatically close the shape.
+                </p>
+
+            </div>
+
+            <div class="image-wrapper">
+
+                <img
+                    src="Images/screenshot2.png"
+                    alt="Annotated SVG line, polygon and polyline coordinate examples"
+                >
+
+            </div>
+
+        </article>
+
+
+        <!-- SCREENSHOT 3 -->
+
+        <article class="example-card">
+
+            <div class="example-content">
+
+                <span class="number">3</span>
+                <h2>Path and Text</h2>
+
+                <p>
+                    The path element uses drawing commands inside the
+                    d attribute. M defines the starting point, C creates
+                    a cubic Bézier curve and L creates a straight line.
+                    The text element uses x and y coordinates together
+                    with text-anchor to control its position.
+                </p>
+
+            </div>
+
+            <div class="image-wrapper">
+
+                <img
+                    src="Images/screenshot3.png"
+                    alt="Annotated SVG path and text coordinate examples"
+                >
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <div class="back-link">
+
+        <a href="index.html" class="button-link">
+            ← Back to House & Garden
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="declaration">
+
+            <h2>AI Declaration</h2>
+
+            <p>
+                Generative AI, specifically ChatGPT, was used to assist
+                with the development of this exercise. AI assistance was
+                used for guidance on SVG syntax, webpage styling,
+                coordinate explanations and code structure. The generated
+                material was reviewed, tested and adapted before being
+                included in the final work.
+            </p>
+
+        </div>
+
+        <div class="student-details">
+
+            <span>
+                <strong>Name:</strong>
+                Darrshan A/L Muraleesvaran
+            </span>
+
+            <span>
+                <strong>Student ID:</strong>
+                105965528
+            </span>
+
+            <span>
+                <strong>Unit:</strong>
+                COS30045 Data Visualisation
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SVG Coordinate Demo - Screenshot 3</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 25px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        svg {
+            display: block;
+            margin: 25px auto;
+            border: 2px solid #333;
+            background: #87ceeb;
+        }
+
+        .annotation {
+            font-size: 17px;
+            font-weight: bold;
+            fill: #000;
+        }
+
+        .small-note {
+            font-size: 14px;
+            fill: #222;
+        }
+
+        .point {
+            fill: red;
+            stroke: black;
+            stroke-width: 1;
+        }
+
+        .guide {
+            stroke: red;
+            stroke-width: 2;
+            stroke-dasharray: 6 4;
+        }
+
+        .box {
+            fill: #ffffff;
+            opacity: 0.92;
+            stroke: #444;
+            stroke-width: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>SVG Coordinate Examples — Path & Text</h1>
+
+<p>
+    This screenshot explains how the SVG path is built and how text is positioned.
+</p>
+
+<svg width="1000"
+     height="650"
+     viewBox="0 0 1000 650">
+
+    <!-- SKY -->
+    <rect
+        x="0"
+        y="0"
+        width="1000"
+        height="650"
+        fill="#87ceeb"
+    />
+
+    <!-- GRASS -->
+    <rect
+        x="0"
+        y="390"
+        width="1000"
+        height="260"
+        fill="#48a63f"
+    />
+
+    <!-- HOUSE BODY -->
+    <rect
+        x="340"
+        y="250"
+        width="320"
+        height="260"
+        fill="#d47b39"
+        stroke="#7a431f"
+        stroke-width="4"
+    />
+
+    <!-- ROOF -->
+    <polygon
+        points="300,250 500,90 700,250"
+        fill="#9b4f24"
+        stroke="#713515"
+        stroke-width="4"
+    />
+
+    <!-- DOOR -->
+    <rect
+        x="465"
+        y="380"
+        width="75"
+        height="130"
+        fill="#6f3d26"
+        stroke="#4f2c1c"
+        stroke-width="3"
+    />
+
+    <!-- WALKWAY PATH -->
+    <path
+        d="
+            M 500 510
+            C 470 530,
+              390 540,
+              400 620
+            L 560 620
+            C 570 580,
+              540 540,
+              500 510
+        "
+        fill="#d6b47b"
+        stroke="#b48b54"
+        stroke-width="4"
+    />
+
+    <!-- PATH START POINT -->
+    <circle
+        cx="500"
+        cy="510"
+        r="7"
+        class="point"
+    />
+
+    <!-- LEFT EXPLANATION PANEL -->
+    <rect
+        x="35"
+        y="405"
+        width="300"
+        height="215"
+        rx="10"
+        class="box"
+    />
+
+    <text x="55" y="435" class="annotation">
+        Path instructions
+    </text>
+
+    <text x="55" y="465" class="small-note">
+        M 500 510
+    </text>
+
+    <text x="55" y="485" class="small-note">
+        Start at (500,510)
+    </text>
+
+    <text x="55" y="515" class="small-note">
+        C 470 530, 390 540, 400 620
+    </text>
+
+    <text x="55" y="535" class="small-note">
+        Curve using 2 control points
+    </text>
+
+    <text x="55" y="555" class="small-note">
+        and end at (400,620)
+    </text>
+
+    <text x="55" y="585" class="small-note">
+        L 560 620
+    </text>
+
+    <text x="55" y="605" class="small-note">
+        Draw a straight line to (560,620)
+    </text>
+
+    <!-- MIDDLE PATH EXPLANATION -->
+    <line
+        x1="335"
+        y1="500"
+        x2="495"
+        y2="510"
+        class="guide"
+    />
+
+    <text x="355" y="475" class="annotation">
+        M = move to starting point
+    </text>
+
+    <!-- RIGHT EXPLANATION PANEL -->
+    <rect
+        x="690"
+        y="320"
+        width="275"
+        height="215"
+        rx="10"
+        class="box"
+    />
+
+    <text x="710" y="350" class="annotation">
+        Final curve
+    </text>
+
+    <text x="710" y="380" class="small-note">
+        C 570 580, 540 540, 500 510
+    </text>
+
+    <text x="710" y="405" class="small-note">
+        Control point 1 = (570,580)
+    </text>
+
+    <text x="710" y="430" class="small-note">
+        Control point 2 = (540,540)
+    </text>
+
+    <text x="710" y="455" class="small-note">
+        End point = (500,510)
+    </text>
+
+    <text x="710" y="485" class="small-note">
+        This curves back to the start
+    </text>
+
+    <text x="710" y="510" class="small-note">
+        and completes the walkway.
+    </text>
+
+    <!-- PATH COMMAND KEY -->
+    <rect
+        x="355"
+        y="270"
+        width="290"
+        height="95"
+        rx="10"
+        class="box"
+    />
+
+    <text x="375" y="300" class="annotation">
+        Path command key
+    </text>
+
+    <text x="375" y="325" class="small-note">
+        M = Move to
+    </text>
+
+    <text x="375" y="345" class="small-note">
+        C = Cubic Bézier curve
+    </text>
+
+    <text x="375" y="365" class="small-note">
+        L = Straight line
+    </text>
+
+    <!-- TEXT ELEMENT -->
+    <text
+        x="500"
+        y="600"
+        text-anchor="middle"
+        font-size="28"
+        font-weight="bold"
+        fill="white">
+        Home Sweet Home
+    </text>
+
+    <!-- TEXT ANCHOR POINT -->
+    <circle
+        cx="500"
+        cy="600"
+        r="7"
+        class="point"
+    />
+
+    <line
+        x1="500"
+        y1="600"
+        x2="650"
+        y2="585"
+        class="guide"
+    />
+
+    <text
+        x="655"
+        y="570"
+        class="annotation">
+        Text position
+    </text>
+
+    <text
+        x="655"
+        y="592"
+        class="small-note">
+        x = 500
+    </text>
+
+    <text
+        x="655"
+        y="612"
+        class="small-note">
+        y = 600
+    </text>
+
+    <text
+        x="655"
+        y="632"
+        class="small-note">
+        text-anchor = middle
+    </text>
+
+</svg>
+
+</body>
+</html>

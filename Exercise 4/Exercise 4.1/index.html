@@ -4,315 +4,672 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Exercise 4.1 - SVG House</title>
+    <title>Exercise 4.1 - SVG House and Garden</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                linear-gradient(180deg, #eef6fa 0%, #f7f9fb 45%, #ffffff 100%);
+            color: #1f2933;
         }
 
-        h1 {
-            margin-top: 30px;
-            color: #333;
+        /* -----------------------------
+           HEADER
+        ----------------------------- */
+
+        header {
+            background: linear-gradient(135deg, #17212b, #253544);
+            color: white;
+            padding: 28px 24px;
+            border-bottom: 4px solid #67b7d1;
         }
 
-        p {
-            color: #666;
+        .header-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+            color: #9fd8eb;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: clamp(30px, 5vw, 48px);
+            line-height: 1.1;
+        }
+
+        header p {
+            max-width: 720px;
+            color: #d4dde5;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.16);
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.2s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #ffffff;
+            color: #17212b;
+        }
+
+        /* -----------------------------
+           MAIN CONTENT
+        ----------------------------- */
+
+        main {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 48px 22px 64px;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.96);
+            border: 1px solid #dde6eb;
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 14px 34px rgba(28, 47, 61, 0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #1d3442;
+            font-size: 26px;
+        }
+
+        .card p {
+            color: #53636f;
+            line-height: 1.75;
+        }
+
+        .shape-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px 18px;
+            padding: 0;
+            margin: 18px 0 0;
+            list-style: none;
+        }
+
+        .shape-list li {
+            background: #f1f7fa;
+            border: 1px solid #d8e9f0;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-family: Consolas, monospace;
+            font-size: 14px;
+        }
+
+        .highlight {
+            border-left: 5px solid #65abc4;
+            background: #edf8fc;
+            padding: 16px 18px;
+            border-radius: 10px;
+            line-height: 1.65;
+            color: #40525f;
+        }
+
+        /* -----------------------------
+           SVG DISPLAY
+        ----------------------------- */
+
+        .svg-section {
+            background: white;
+            border: 1px solid #dce4e9;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 14px 34px rgba(28, 47, 61, 0.08);
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: end;
+            margin-bottom: 22px;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-size: 28px;
+            color: #1d3442;
+        }
+
+        .section-heading p {
+            margin: 0;
+            color: #687882;
+            max-width: 520px;
+            line-height: 1.6;
+        }
+
+        .svg-wrapper {
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid #b9c8cf;
+            background: #dfeff5;
         }
 
         svg {
             display: block;
-            margin: 30px auto;
-            border: 2px solid #333;
-            background-color: #87ceeb;
+            width: 100%;
+            height: auto;
+            min-width: 720px;
+        }
+
+        /* -----------------------------
+           PAGE LINK
+        ----------------------------- */
+
+        .next-section {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button-link {
+            display: inline-block;
+            text-decoration: none;
+            padding: 14px 22px;
+            border-radius: 12px;
+            background: #1d3442;
+            color: white;
+            font-weight: bold;
+            transition: 0.2s ease;
+        }
+
+        .button-link:hover {
+            transform: translateY(-2px);
+            background: #2b5268;
+        }
+
+        /* -----------------------------
+           DECLARATION
+        ----------------------------- */
+
+        footer {
+            background: #17212b;
+            color: #e5edf2;
+            padding: 42px 22px;
+        }
+
+        .footer-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .declaration {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 20px;
+        }
+
+        .declaration h2 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .declaration p {
+            margin-bottom: 0;
+            line-height: 1.7;
+            color: #cbd7df;
+        }
+
+        .student-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 30px;
+            color: #c5d1d8;
+            font-size: 14px;
+        }
+
+        .student-details strong {
+            color: white;
+        }
+
+        @media (max-width: 800px) {
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .shape-list {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <h1>My SVG House and Garden</h1>
+<header>
+    <div class="header-inner">
 
-    <p>
-        This picture was created using different SVG shapes.
-    </p>
+        <div class="eyebrow">COS30045 · Data Visualisation</div>
 
-    <svg width="900"
-         height="600"
-         viewBox="0 0 900 600">
+        <h1>SVG House & Garden</h1>
 
-        <!-- SKY -->
-        <rect
-            x="0"
-            y="0"
-            width="900"
-            height="600"
-            fill="#87ceeb"
-        />
+        <p>
+            Exercise 4.1 explores the use of SVG shapes, coordinates,
+            fills, strokes, paths and text by creating a simple illustrated
+            house and garden.
+        </p>
 
-        <!-- SUN -->
-        <circle
-            cx="760"
-            cy="100"
-            r="55"
-            fill="#ffd93d"
-        />
+        <nav>
+            <a href="index.html" class="active">House & Garden</a>
+            <a href="svg-coordinates.html">SVG Coordinates</a>
+        </nav>
 
-        <!-- CLOUD -->
-        <ellipse
-            cx="130"
-            cy="105"
-            rx="55"
-            ry="25"
-            fill="white"
-        />
+    </div>
+</header>
 
-        <ellipse
-            cx="175"
-            cy="100"
-            rx="50"
-            ry="30"
-            fill="white"
-        />
 
-        <ellipse
-            cx="150"
-            cy="80"
-            rx="40"
-            ry="30"
-            fill="white"
-        />
+<main>
 
-        <!-- GRASS -->
-        <rect
-            x="0"
-            y="360"
-            width="900"
-            height="240"
-            fill="#48a63f"
-        />
+    <section class="intro-grid">
 
-        <!-- HOUSE BODY -->
-        <rect
-            x="300"
-            y="250"
-            width="320"
-            height="260"
-            fill="#d47b39"
-            stroke="#7a431f"
-            stroke-width="4"
-        />
+        <article class="card">
 
-        <!-- ROOF -->
-        <polygon
-            points="260,250 460,90 660,250"
-            fill="#9b4f24"
-            stroke="#713515"
-            stroke-width="4"
-        />
+            <h2>About the Illustration</h2>
 
-        <!-- CHIMNEY -->
-        <rect
-            x="540"
-            y="120"
-            width="55"
-            height="100"
-            fill="#814626"
-        />
+            <p>
+                This illustration is created entirely using SVG elements.
+                Different SVG shapes are combined to build the house,
+                garden and surrounding objects.
+            </p>
 
-        <!-- DOOR -->
-        <rect
-            x="425"
-            y="380"
-            width="75"
-            height="130"
-            fill="#6f3d26"
-            stroke="#4f2c1c"
-            stroke-width="3"
-        />
+            <ul class="shape-list">
+                <li>&lt;rect&gt;</li>
+                <li>&lt;circle&gt;</li>
+                <li>&lt;ellipse&gt;</li>
+                <li>&lt;line&gt;</li>
+                <li>&lt;polygon&gt;</li>
+                <li>&lt;polyline&gt;</li>
+                <li>&lt;path&gt;</li>
+                <li>&lt;text&gt;</li>
+            </ul>
 
-        <!-- DOOR KNOB -->
-        <circle
-            cx="485"
-            cy="450"
-            r="6"
-            fill="#f2c94c"
-        />
+        </article>
 
-        <!-- LEFT WINDOW -->
-        <rect
-            x="340"
-            y="310"
-            width="70"
-            height="70"
-            fill="#bfe9ff"
-            stroke="#4b3728"
-            stroke-width="4"
-        />
 
-        <!-- LEFT WINDOW DIVIDERS -->
-        <line
-            x1="375"
-            y1="310"
-            x2="375"
-            y2="380"
-            stroke="#4b3728"
-            stroke-width="3"
-        />
+        <aside class="card">
 
-        <line
-            x1="340"
-            y1="345"
-            x2="410"
-            y2="345"
-            stroke="#4b3728"
-            stroke-width="3"
-        />
+            <h2>SVG Coordinate System</h2>
 
-        <!-- RIGHT WINDOW -->
-        <rect
-            x="515"
-            y="310"
-            width="70"
-            height="70"
-            fill="#bfe9ff"
-            stroke="#4b3728"
-            stroke-width="4"
-        />
+            <p>
+                SVG uses a coordinate system where the origin begins in
+                the top-left corner of the SVG drawing area.
+            </p>
 
-        <!-- RIGHT WINDOW DIVIDERS -->
-        <line
-            x1="550"
-            y1="310"
-            x2="550"
-            y2="380"
-            stroke="#4b3728"
-            stroke-width="3"
-        />
+            <div class="highlight">
+                <strong>(0,0)</strong> is the top-left corner.<br>
+                X increases towards the right.<br>
+                Y increases downwards.
+            </div>
 
-        <line
-            x1="515"
-            y1="345"
-            x2="585"
-            y2="345"
-            stroke="#4b3728"
-            stroke-width="3"
-        />
+        </aside>
 
-        <!-- WALKWAY -->
-        <path
-            d="M 460 510
-               C 430 530,
-                 350 540,
-                 360 600
-               L 520 600
-               C 530 560,
-                 500 530,
-                 460 510"
-            fill="#d6b47b"
-            stroke="#b48b54"
-            stroke-width="4"
-        />
+    </section>
 
-        <!-- TREE TRUNK -->
-        <rect
-            x="120"
-            y="315"
-            width="35"
-            height="150"
-            fill="#8b542d"
-        />
 
-        <!-- TREE LEAVES -->
-        <ellipse
-            cx="105"
-            cy="295"
-            rx="55"
-            ry="50"
-            fill="#2f8f3a"
-        />
+    <section class="svg-section">
 
-        <ellipse
-            cx="150"
-            cy="285"
-            rx="55"
-            ry="55"
-            fill="#287d35"
-        />
+        <div class="section-heading">
 
-        <ellipse
-            cx="125"
-            cy="250"
-            rx="60"
-            ry="50"
-            fill="#319b41"
-        />
+            <div>
+                <h2>House and Garden Illustration</h2>
+            </div>
 
-        <!-- FLOWERS -->
-        <circle cx="720" cy="470" r="10" fill="#ff4b91" />
-        <circle cx="750" cy="490" r="10" fill="#f7d154" />
-        <circle cx="785" cy="465" r="10" fill="#9b51e0" />
+            <p>
+                The drawing below demonstrates how multiple SVG elements
+                can be positioned and styled within one SVG canvas.
+            </p>
 
-        <!-- FLOWER STEMS -->
-        <line
-            x1="720"
-            y1="480"
-            x2="720"
-            y2="515"
-            stroke="#1f7a36"
-            stroke-width="4"
-        />
+        </div>
 
-        <line
-            x1="750"
-            y1="500"
-            x2="750"
-            y2="530"
-            stroke="#1f7a36"
-            stroke-width="4"
-        />
 
-        <line
-            x1="785"
-            y1="475"
-            x2="785"
-            y2="515"
-            stroke="#1f7a36"
-            stroke-width="4"
-        />
+        <div class="svg-wrapper">
 
-        <!-- FENCE -->
-        <polyline
-            points="
-                30,470
-                30,400
-                60,400
-                60,470
-                90,470
-                90,400
-                120,400
-            "
-            fill="none"
-            stroke="#ffffff"
-            stroke-width="8"
-        />
+            <svg width="900"
+                 height="600"
+                 viewBox="0 0 900 600">
 
-        <!-- TEXT -->
-        <text
-            x="450"
-            y="570"
-            text-anchor="middle"
-            font-size="28"
-            font-weight="bold"
-            fill="#ffffff"
-        >
-            Home Sweet Home
-        </text>
+                <!-- SKY -->
+                <rect
+                    x="0"
+                    y="0"
+                    width="900"
+                    height="600"
+                    fill="#87ceeb"
+                />
 
-    </svg>
+                <!-- SUN -->
+                <circle
+                    cx="760"
+                    cy="100"
+                    r="55"
+                    fill="#ffd93d"
+                />
+
+                <!-- CLOUD -->
+                <ellipse
+                    cx="130"
+                    cy="105"
+                    rx="55"
+                    ry="25"
+                    fill="white"
+                />
+
+                <ellipse
+                    cx="175"
+                    cy="100"
+                    rx="50"
+                    ry="30"
+                    fill="white"
+                />
+
+                <ellipse
+                    cx="150"
+                    cy="80"
+                    rx="40"
+                    ry="30"
+                    fill="white"
+                />
+
+                <!-- GRASS -->
+                <rect
+                    x="0"
+                    y="360"
+                    width="900"
+                    height="240"
+                    fill="#48a63f"
+                />
+
+                <!-- HOUSE BODY -->
+                <rect
+                    x="300"
+                    y="250"
+                    width="320"
+                    height="260"
+                    fill="#d47b39"
+                    stroke="#7a431f"
+                    stroke-width="4"
+                />
+
+                <!-- ROOF -->
+                <polygon
+                    points="260,250 460,90 660,250"
+                    fill="#9b4f24"
+                    stroke="#713515"
+                    stroke-width="4"
+                />
+
+                <!-- CHIMNEY -->
+                <rect
+                    x="540"
+                    y="120"
+                    width="55"
+                    height="100"
+                    fill="#814626"
+                />
+
+                <!-- DOOR -->
+                <rect
+                    x="425"
+                    y="380"
+                    width="75"
+                    height="130"
+                    fill="#6f3d26"
+                    stroke="#4f2c1c"
+                    stroke-width="3"
+                />
+
+                <!-- DOOR KNOB -->
+                <circle
+                    cx="485"
+                    cy="450"
+                    r="6"
+                    fill="#f2c94c"
+                />
+
+                <!-- LEFT WINDOW -->
+                <rect
+                    x="340"
+                    y="310"
+                    width="70"
+                    height="70"
+                    fill="#bfe9ff"
+                    stroke="#4b3728"
+                    stroke-width="4"
+                />
+
+                <line
+                    x1="375"
+                    y1="310"
+                    x2="375"
+                    y2="380"
+                    stroke="#4b3728"
+                    stroke-width="3"
+                />
+
+                <line
+                    x1="340"
+                    y1="345"
+                    x2="410"
+                    y2="345"
+                    stroke="#4b3728"
+                    stroke-width="3"
+                />
+
+                <!-- RIGHT WINDOW -->
+                <rect
+                    x="515"
+                    y="310"
+                    width="70"
+                    height="70"
+                    fill="#bfe9ff"
+                    stroke="#4b3728"
+                    stroke-width="4"
+                />
+
+                <line
+                    x1="550"
+                    y1="310"
+                    x2="550"
+                    y2="380"
+                    stroke="#4b3728"
+                    stroke-width="3"
+                />
+
+                <line
+                    x1="515"
+                    y1="345"
+                    x2="585"
+                    y2="345"
+                    stroke="#4b3728"
+                    stroke-width="3"
+                />
+
+                <!-- WALKWAY -->
+                <path
+                    d="
+                        M 460 510
+                        C 430 530,
+                          350 540,
+                          360 600
+                        L 520 600
+                        C 530 560,
+                          500 530,
+                          460 510
+                    "
+                    fill="#d6b47b"
+                    stroke="#b48b54"
+                    stroke-width="4"
+                />
+
+                <!-- TREE TRUNK -->
+                <rect
+                    x="120"
+                    y="315"
+                    width="35"
+                    height="150"
+                    fill="#8b542d"
+                />
+
+                <!-- TREE LEAVES -->
+                <ellipse
+                    cx="105"
+                    cy="295"
+                    rx="55"
+                    ry="50"
+                    fill="#2f8f3a"
+                />
+
+                <ellipse
+                    cx="150"
+                    cy="285"
+                    rx="55"
+                    ry="55"
+                    fill="#287d35"
+                />
+
+                <ellipse
+                    cx="125"
+                    cy="250"
+                    rx="60"
+                    ry="50"
+                    fill="#319b41"
+                />
+
+                <!-- FLOWERS -->
+                <circle cx="720" cy="470" r="10" fill="#ff4b91" />
+                <circle cx="750" cy="490" r="10" fill="#f7d154" />
+                <circle cx="785" cy="465" r="10" fill="#9b51e0" />
+
+                <!-- FLOWER STEMS -->
+                <line x1="720" y1="480" x2="720" y2="515"
+                      stroke="#1f7a36" stroke-width="4" />
+
+                <line x1="750" y1="500" x2="750" y2="530"
+                      stroke="#1f7a36" stroke-width="4" />
+
+                <line x1="785" y1="475" x2="785" y2="515"
+                      stroke="#1f7a36" stroke-width="4" />
+
+                <!-- FENCE -->
+                <polyline
+                    points="
+                        30,470
+                        30,400
+                        60,400
+                        60,470
+                        90,470
+                        90,400
+                        120,400
+                    "
+                    fill="none"
+                    stroke="#ffffff"
+                    stroke-width="8"
+                />
+
+                <!-- TEXT -->
+                <text
+                    x="450"
+                    y="570"
+                    text-anchor="middle"
+                    font-size="28"
+                    font-weight="bold"
+                    fill="#ffffff">
+                    Home Sweet Home
+                </text>
+
+            </svg>
+
+        </div>
+
+        <div class="next-section">
+            <a href="svg-coordinates.html" class="button-link">
+                View SVG Coordinate Examples →
+            </a>
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="declaration">
+
+            <h2>AI Declaration</h2>
+
+            <p>
+                Generative AI, specifically ChatGPT, was used to assist
+                with the development of this exercise. AI assistance was
+                used for guidance on SVG syntax, webpage styling,
+                coordinate explanations and code structure. The generated
+                material was reviewed, tested and adapted before being
+                included in the final work.
+            </p>
+
+        </div>
+
+        <div class="student-details">
+            <span><strong>Name:</strong> Darrshan A/L Muraleesvaran</span>
+            <span><strong>Student ID:</strong> 105965528</span>
+            <span><strong>Unit:</strong> COS30045 Data Visualisation</span>
+        </div>
+
+    </div>
+
+</footer>
 
 </body>
 </html>

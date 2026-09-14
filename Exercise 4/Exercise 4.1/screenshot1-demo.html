@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SVG Coordinate Demo - Screenshot 1</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 25px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        svg {
+            display: block;
+            margin: 25px auto;
+            border: 2px solid #333;
+            background: #87ceeb;
+        }
+
+        .annotation {
+            font-size: 16px;
+            font-weight: bold;
+            fill: #000;
+        }
+
+        .small-note {
+            font-size: 14px;
+            fill: #222;
+        }
+
+        .point {
+            fill: red;
+            stroke: black;
+            stroke-width: 1;
+        }
+
+        .guide {
+            stroke: red;
+            stroke-width: 2;
+            stroke-dasharray: 6 4;
+        }
+
+        .measure {
+            stroke: black;
+            stroke-width: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>SVG Coordinate Examples — Rectangle, Circle & Ellipse</h1>
+
+<p>
+    This demonstration shows how SVG coordinates and dimensions
+    correspond to the objects in the drawing.
+</p>
+
+<svg width="900"
+     height="600"
+     viewBox="0 0 900 600">
+
+    <!-- SKY -->
+    <rect
+        x="0"
+        y="0"
+        width="900"
+        height="600"
+        fill="#87ceeb"
+    />
+
+    <!-- GRASS -->
+    <rect
+        x="0"
+        y="360"
+        width="900"
+        height="240"
+        fill="#48a63f"
+    />
+
+
+    <!-- ====================================== -->
+    <!-- 1. ELLIPSE EXAMPLE - CLOUD -->
+    <!-- ====================================== -->
+
+    <ellipse
+        cx="130"
+        cy="105"
+        rx="55"
+        ry="25"
+        fill="white"
+    />
+
+    <!-- Centre -->
+    <circle
+        cx="130"
+        cy="105"
+        r="5"
+        class="point"
+    />
+
+    <!-- Horizontal radius -->
+    <line
+        x1="130"
+        y1="105"
+        x2="185"
+        y2="105"
+        class="measure"
+    />
+
+    <text
+        x="145"
+        y="95"
+        class="annotation">
+        rx = 55
+    </text>
+
+    <!-- Vertical radius -->
+    <line
+        x1="130"
+        y1="105"
+        x2="130"
+        y2="130"
+        class="measure"
+    />
+
+    <text
+        x="55"
+        y="135"
+        class="annotation">
+        ry = 25
+    </text>
+
+    <text
+        x="45"
+        y="70"
+        class="small-note">
+        Ellipse centre: (cx=130, cy=105)
+    </text>
+
+
+    <!-- ====================================== -->
+    <!-- 2. CIRCLE EXAMPLE - SUN -->
+    <!-- ====================================== -->
+
+    <circle
+        cx="760"
+        cy="100"
+        r="55"
+        fill="#ffd93d"
+    />
+
+    <circle
+        cx="760"
+        cy="100"
+        r="5"
+        class="point"
+    />
+
+    <!-- radius -->
+    <line
+        x1="760"
+        y1="100"
+        x2="815"
+        y2="100"
+        class="measure"
+    />
+
+    <text
+        x="705"
+        y="30"
+        class="annotation">
+        Centre: (cx=760, cy=100)
+    </text>
+
+    <text
+        x="785"
+        y="90"
+        class="annotation">
+        r = 55
+    </text>
+
+
+    <!-- ====================================== -->
+    <!-- 3. RECTANGLE EXAMPLE - HOUSE BODY -->
+    <!-- ====================================== -->
+
+    <rect
+        x="300"
+        y="250"
+        width="320"
+        height="260"
+        fill="#d47b39"
+        stroke="#7a431f"
+        stroke-width="4"
+    />
+
+    <!-- Top-left coordinate -->
+    <circle
+        cx="300"
+        cy="250"
+        r="6"
+        class="point"
+    />
+
+    <text
+        x="165"
+        y="235"
+        class="annotation">
+        (x=300, y=250)
+    </text>
+
+    <line
+        x1="290"
+        y1="238"
+        x2="300"
+        y2="250"
+        class="guide"
+    />
+
+    <!-- Width measurement -->
+    <line
+        x1="300"
+        y1="530"
+        x2="620"
+        y2="530"
+        class="measure"
+    />
+
+    <line
+        x1="300"
+        y1="520"
+        x2="300"
+        y2="540"
+        class="measure"
+    />
+
+    <line
+        x1="620"
+        y1="520"
+        x2="620"
+        y2="540"
+        class="measure"
+    />
+
+    <text
+        x="430"
+        y="555"
+        class="annotation">
+        width = 320
+    </text>
+
+    <!-- Height measurement -->
+    <line
+        x1="645"
+        y1="250"
+        x2="645"
+        y2="510"
+        class="measure"
+    />
+
+    <line
+        x1="635"
+        y1="250"
+        x2="655"
+        y2="250"
+        class="measure"
+    />
+
+    <line
+        x1="635"
+        y1="510"
+        x2="655"
+        y2="510"
+        class="measure"
+    />
+
+    <text
+        x="660"
+        y="385"
+        class="annotation">
+        height = 260
+    </text>
+
+
+    <!-- ROOF JUST FOR CONTEXT -->
+    <polygon
+        points="260,250 460,90 660,250"
+        fill="#9b4f24"
+        stroke="#713515"
+        stroke-width="4"
+    />
+
+    <!-- DOOR -->
+    <rect
+        x="425"
+        y="380"
+        width="75"
+        height="130"
+        fill="#6f3d26"
+        stroke="#4f2c1c"
+        stroke-width="3"
+    />
+
+    <!-- WINDOWS -->
+    <rect
+        x="340"
+        y="310"
+        width="70"
+        height="70"
+        fill="#bfe9ff"
+        stroke="#4b3728"
+        stroke-width="4"
+    />
+
+    <rect
+        x="515"
+        y="310"
+        width="70"
+        height="70"
+        fill="#bfe9ff"
+        stroke="#4b3728"
+        stroke-width="4"
+    />
+
+</svg>
+
+</body>
+</html>

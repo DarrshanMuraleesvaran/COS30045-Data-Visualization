@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SVG Coordinate Demo - Screenshot 2</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 25px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        svg {
+            display: block;
+            margin: 25px auto;
+            border: 2px solid #333;
+            background: #87ceeb;
+        }
+
+        .annotation {
+            font-size: 16px;
+            font-weight: bold;
+            fill: #000;
+        }
+
+        .small-note {
+            font-size: 14px;
+            fill: #222;
+        }
+
+        .point {
+            fill: red;
+            stroke: black;
+            stroke-width: 1;
+        }
+
+        .guide {
+            stroke: red;
+            stroke-width: 2;
+            stroke-dasharray: 6 4;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>SVG Coordinate Examples — Line, Polygon & Polyline</h1>
+
+<p>
+    This demonstration shows how coordinate values in the SVG code
+    match positions in the drawing.
+</p>
+
+<svg width="900"
+     height="600"
+     viewBox="0 0 900 600">
+
+    <!-- SKY -->
+    <rect
+        x="0"
+        y="0"
+        width="900"
+        height="600"
+        fill="#87ceeb"
+    />
+
+    <!-- GRASS -->
+    <rect
+        x="0"
+        y="360"
+        width="900"
+        height="240"
+        fill="#48a63f"
+    />
+
+    <!-- HOUSE BODY -->
+    <rect
+        x="300"
+        y="250"
+        width="320"
+        height="260"
+        fill="#d47b39"
+        stroke="#7a431f"
+        stroke-width="4"
+    />
+
+
+    <!-- ====================================== -->
+    <!-- 1. POLYGON EXAMPLE - ROOF -->
+    <!-- ====================================== -->
+
+    <polygon
+        points="260,250 460,90 660,250"
+        fill="#9b4f24"
+        stroke="#713515"
+        stroke-width="4"
+    />
+
+    <!-- Red coordinate points -->
+
+    <!-- LEFT POINT -->
+    <circle
+        cx="260"
+        cy="250"
+        r="6"
+        class="point"
+    />
+
+    <!-- TOP POINT -->
+    <circle
+        cx="460"
+        cy="90"
+        r="6"
+        class="point"
+    />
+
+    <!-- RIGHT POINT -->
+    <circle
+        cx="660"
+        cy="250"
+        r="6"
+        class="point"
+    />
+
+    <!-- Polygon labels -->
+
+    <text
+        x="165"
+        y="245"
+        class="annotation">
+        (260,250)
+    </text>
+
+    <text
+        x="475"
+        y="80"
+        class="annotation">
+        (460,90)
+    </text>
+
+    <text
+        x="670"
+        y="245"
+        class="annotation">
+        (660,250)
+    </text>
+
+    <text
+        x="350"
+        y="130"
+        class="small-note">
+        Polygon: three coordinate points are connected
+    </text>
+
+
+    <!-- ====================================== -->
+    <!-- WINDOWS -->
+    <!-- ====================================== -->
+
+    <!-- LEFT WINDOW -->
+    <rect
+        x="340"
+        y="310"
+        width="70"
+        height="70"
+        fill="#bfe9ff"
+        stroke="#4b3728"
+        stroke-width="4"
+    />
+
+    <!-- Vertical window divider -->
+    <line
+        x1="375"
+        y1="310"
+        x2="375"
+        y2="380"
+        stroke="#4b3728"
+        stroke-width="3"
+    />
+
+    <!-- Horizontal window divider -->
+    <line
+        x1="340"
+        y1="345"
+        x2="410"
+        y2="345"
+        stroke="#4b3728"
+        stroke-width="3"
+    />
+
+    <!-- RIGHT WINDOW -->
+    <rect
+        x="515"
+        y="310"
+        width="70"
+        height="70"
+        fill="#bfe9ff"
+        stroke="#4b3728"
+        stroke-width="4"
+    />
+
+    <line
+        x1="550"
+        y1="310"
+        x2="550"
+        y2="380"
+        stroke="#4b3728"
+        stroke-width="3"
+    />
+
+    <line
+        x1="515"
+        y1="345"
+        x2="585"
+        y2="345"
+        stroke="#4b3728"
+        stroke-width="3"
+    />
+
+
+    <!-- ====================================== -->
+    <!-- 2. LINE EXAMPLE -->
+    <!-- ====================================== -->
+
+    <!-- Start of the vertical divider -->
+    <circle
+        cx="375"
+        cy="310"
+        r="6"
+        class="point"
+    />
+
+    <!-- End of the vertical divider -->
+    <circle
+        cx="375"
+        cy="380"
+        r="6"
+        class="point"
+    />
+
+    <!-- Guide from start point to label -->
+    <line
+        x1="375"
+        y1="310"
+        x2="225"
+        y2="300"
+        class="guide"
+    />
+
+    <!-- Guide from end point to label -->
+    <line
+        x1="375"
+        y1="380"
+        x2="225"
+        y2="405"
+        class="guide"
+    />
+
+    <text
+        x="70"
+        y="295"
+        class="annotation">
+        Start: (x1=375, y1=310)
+    </text>
+
+    <text
+        x="70"
+        y="420"
+        class="annotation">
+        End: (x2=375, y2=380)
+    </text>
+
+    <text
+        x="75"
+        y="340"
+        class="small-note">
+        LINE
+    </text>
+
+    <text
+        x="75"
+        y="360"
+        class="small-note">
+        connects two points
+    </text>
+
+
+    <!-- DOOR -->
+    <rect
+        x="425"
+        y="380"
+        width="75"
+        height="130"
+        fill="#6f3d26"
+        stroke="#4f2c1c"
+        stroke-width="3"
+    />
+
+
+    <!-- ====================================== -->
+    <!-- 3. POLYLINE EXAMPLE - FENCE -->
+    <!-- ====================================== -->
+
+    <polyline
+        points="
+            30,470
+            30,400
+            60,400
+            60,470
+            90,470
+            90,400
+            120,400
+        "
+        fill="none"
+        stroke="white"
+        stroke-width="8"
+    />
+
+    <!-- Show first three coordinate points -->
+
+    <circle
+        cx="30"
+        cy="470"
+        r="6"
+        class="point"
+    />
+
+    <circle
+        cx="30"
+        cy="400"
+        r="6"
+        class="point"
+    />
+
+    <circle
+        cx="60"
+        cy="400"
+        r="6"
+        class="point"
+    />
+
+    <!-- Labels -->
+
+    <text
+        x="135"
+        y="455"
+        class="annotation">
+        (30,470)
+    </text>
+
+    <line
+        x1="30"
+        y1="470"
+        x2="125"
+        y2="450"
+        class="guide"
+    />
+
+    <text
+        x="135"
+        y="485"
+        class="annotation">
+        (30,400)
+    </text>
+
+    <line
+        x1="30"
+        y1="400"
+        x2="125"
+        y2="480"
+        class="guide"
+    />
+
+    <text
+        x="135"
+        y="515"
+        class="annotation">
+        (60,400)
+    </text>
+
+    <line
+        x1="60"
+        y1="400"
+        x2="125"
+        y2="510"
+        class="guide"
+    />
+
+    <text
+        x="25"
+        y="550"
+        class="small-note">
+        Polyline connects several points in sequence.
+    </text>
+
+
+    <!-- TITLE INSIDE SVG -->
+
+    <text
+        x="680"
+        y="550"
+        font-size="18"
+        font-weight="bold"
+        fill="white">
+        SVG Screenshot 2 Demo
+    </text>
+
+</svg>
+
+</body>
+</html>
