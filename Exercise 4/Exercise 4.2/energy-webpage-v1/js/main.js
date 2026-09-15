@@ -1,19 +1,17 @@
-// Step 2: Change the style of an HTML element
-d3.select("h1")
-  .style("color", "green");
+// Exercise 4.3 - D3 Set Up
+
+// Step 2: Create an SVG inside the responsive container
+const svg = d3.select(".responsive-svg-container")
+    .append("svg")
+    .attr("viewBox", "0 0 1200 1600")
+    .style("border", "1px solid black");
 
 
-// Step 3: Append a paragraph to the D3 demo section
-d3.select(".d3-demo")
-  .append("p")
-  .text("Purchasing a low energy consumption TV will help with your energy bills!");
-
-
-// Step 4: Append a rectangle to the SVG
-d3.select("#d3-demo-svg")
-  .append("rect")
-  .attr("x", 50)
-  .attr("y", 50)
-  .attr("width", 100)
-  .attr("height", 30)
-  .style("fill", "green");
+// Step 3: Add a test rectangle to the SVG
+svg
+    .append("rect")
+    .attr("x", 10)
+    .attr("y", 10)
+    .attr("width", 414)
+    .attr("height", 16)
+    .attr("fill", "blue");
