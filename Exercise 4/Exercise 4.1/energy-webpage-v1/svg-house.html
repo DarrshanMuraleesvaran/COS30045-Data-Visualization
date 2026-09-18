@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="css/styles.css">
+
     <title>Exercise 4.1 - SVG House and Garden</title>
 
     <style>
@@ -19,66 +21,17 @@
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             background:
-                linear-gradient(180deg, #eef6fa 0%, #f7f9fb 45%, #ffffff 100%);
-            color: #1f2933;
-        }
-
-        header {
-            background: linear-gradient(135deg, #17212b, #253544);
-            color: white;
-            padding: 28px 24px;
-            border-bottom: 4px solid #67b7d1;
-        }
-
-        .header-inner {
-            max-width: 1180px;
-            margin: 0 auto;
+                linear-gradient(180deg, #f7f5ef 0%, #f7f5ef 45%, #ffffff 100%);
+            color: #292929;
         }
 
         .eyebrow {
             text-transform: uppercase;
             letter-spacing: 2px;
             font-size: 13px;
-            color: #9fd8eb;
+            color: #b97916;
             font-weight: bold;
             margin-bottom: 8px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: clamp(30px, 5vw, 48px);
-            line-height: 1.1;
-        }
-
-        header p {
-            max-width: 720px;
-            color: #d4dde5;
-            line-height: 1.6;
-            margin-bottom: 22px;
-        }
-
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.16);
-            padding: 10px 16px;
-            border-radius: 999px;
-            font-size: 14px;
-            font-weight: bold;
-            transition: 0.2s ease;
-        }
-
-        nav a:hover,
-        nav a.active {
-            background: #ffffff;
-            color: #17212b;
         }
 
         main {
@@ -96,7 +49,7 @@
 
         .card {
             background: rgba(255,255,255,0.96);
-            border: 1px solid #dde6eb;
+            border: 1px solid #e3ddd0;
             border-radius: 18px;
             padding: 28px;
             box-shadow: 0 14px 34px rgba(28, 47, 61, 0.08);
@@ -104,12 +57,12 @@
 
         .card h2 {
             margin-top: 0;
-            color: #1d3442;
+            color: #2c2418;
             font-size: 26px;
         }
 
         .card p {
-            color: #53636f;
+            color: #666666;
             line-height: 1.75;
         }
 
@@ -123,8 +76,8 @@
         }
 
         .shape-list li {
-            background: #f1f7fa;
-            border: 1px solid #d8e9f0;
+            background: #fffaf0;
+            border: 1px solid #eadfca;
             border-radius: 10px;
             padding: 10px 12px;
             font-family: Consolas, monospace;
@@ -132,12 +85,12 @@
         }
 
         .highlight {
-            border-left: 5px solid #65abc4;
-            background: #edf8fc;
+            border-left: 5px solid #e6a52b;
+            background: #fff1c4;
             padding: 16px 18px;
             border-radius: 10px;
             line-height: 1.65;
-            color: #40525f;
+            color: #514126;
         }
 
         .svg-section {
@@ -160,12 +113,12 @@
         .section-heading h2 {
             margin: 0;
             font-size: 28px;
-            color: #1d3442;
+            color: #2c2418;
         }
 
         .section-heading p {
             margin: 0;
-            color: #687882;
+            color: #666666;
             max-width: 520px;
             line-height: 1.6;
         }
@@ -176,9 +129,9 @@
             font-weight: bold;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: #47758d;
-            background: #edf7fb;
-            border: 1px solid #d2e9f2;
+            color: #b97916;
+            background: #fff1c4;
+            border: 1px solid #ead28c;
             padding: 7px 10px;
             border-radius: 999px;
             margin-bottom: 10px;
@@ -187,8 +140,8 @@
         .svg-wrapper {
             overflow-x: auto;
             border-radius: 16px;
-            border: 1px solid #b9c8cf;
-            background: #dfeff5;
+            border: 1px solid #d8cdb8;
+            background: #f3ecdf;
         }
 
         svg {
@@ -200,22 +153,86 @@
 
         .changes-panel {
             margin-top: 24px;
-            background: #f7fafc;
-            border: 1px solid #dce7ec;
+            background: #fbf8f1;
+            border: 1px solid #e3ddd0;
             border-radius: 14px;
             padding: 22px;
         }
 
         .changes-panel h3 {
             margin-top: 0;
-            color: #1d3442;
+            color: #2c2418;
         }
 
         .changes-panel ul {
             margin-bottom: 0;
             padding-left: 20px;
-            color: #53636f;
+            color: #666666;
             line-height: 1.75;
+        }
+
+        .changes-panel > p {
+            color: #666666;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .changes-table-wrapper {
+            overflow-x: auto;
+            border: 1px solid #e3ddd0;
+            border-radius: 14px;
+            background: white;
+        }
+
+        .changes-table {
+            width: 100%;
+            min-width: 940px;
+            border-collapse: collapse;
+        }
+
+        .changes-table th,
+        .changes-table td {
+            padding: 14px 16px;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid #eee7da;
+            line-height: 1.55;
+        }
+
+        .changes-table th {
+            background: #2c2418;
+            color: white;
+            font-size: 14px;
+        }
+
+        .changes-table td {
+            color: #514126;
+            font-size: 14px;
+        }
+
+        .changes-table tbody tr:nth-child(even) {
+            background: #fbf8f1;
+        }
+
+        .changes-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .changes-table code,
+        .table-note code {
+            font-family: Consolas, monospace;
+            background: #fff1c4;
+            color: #6d490d;
+            padding: 2px 5px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .table-note {
+            margin-top: 14px;
+            color: #666666;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
         .next-section {
@@ -229,7 +246,7 @@
             text-decoration: none;
             padding: 14px 22px;
             border-radius: 12px;
-            background: #1d3442;
+            background: #2c2418;
             color: white;
             font-weight: bold;
             transition: 0.2s ease;
@@ -237,11 +254,11 @@
 
         .button-link:hover {
             transform: translateY(-2px);
-            background: #2b5268;
+            background: #3d3020;
         }
 
         footer {
-            background: #17212b;
+            background: #2c2418;
             color: #e5edf2;
             padding: 42px 22px;
         }
@@ -296,34 +313,101 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        .exercise-hero {
+            background: linear-gradient(180deg, #fffaf0 0%, #f7f5ef 100%);
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 70px 30px 35px;
+        }
+
+        .exercise-hero h1 {
+            margin: 0 0 16px;
+            font-size: clamp(2.6rem, 5vw, 4.2rem);
+            color: var(--text);
+        }
+
+        .exercise-hero > p:last-child {
+            max-width: 820px;
+            font-size: 1.08rem;
+            line-height: 1.8;
+            color: var(--text-soft);
+        }
+
+        .exercise-main {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 10px 22px 64px;
+        }
+
+        .ai-panel {
+            max-width: 1180px;
+            margin: 0 auto 40px;
+            padding: 28px 30px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .ai-panel h2 {
+            margin: 0 0 12px;
+            font-size: 1.4rem;
+        }
+
+        .ai-panel p {
+            line-height: 1.75;
+        }
+
+        .student-meta {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 24px;
+            font-size: 0.92rem;
+            color: var(--text-soft);
+        }
+
+        .student-meta strong {
+            color: var(--text);
+        }
+
     </style>
 </head>
 
 <body>
 
-<header>
-    <div class="header-inner">
+<header class="site-header">
+        <nav class="navbar">
 
-        <div class="eyebrow">COS30045 · Data Visualisation</div>
+            <a href="index.html" class="brand">
+                <img src="images/PowerIcon.png" alt="Power logo" class="logo">
 
-        <h1>SVG House & Garden</h1>
+                <div class="brand-text">
+                    <span class="brand-title">ENERGY VIEW</span>
+                    <span class="brand-subtitle">TV Energy Insights</span>
+                </div>
+            </a>
 
-        <p>
-            Exercise 4.1 explores the use of SVG shapes, coordinates,
-            fills, strokes, paths, text, groups and transformations by
-            creating and customising a house and garden illustration.
-        </p>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="televisions.html">Televisions</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="svg-house.html" class="active">SVG House</a></li>
+                <li><a href="svg-coordinates.html">SVG Coordinates</a></li>
+            </ul>
 
-        <nav>
-            <a href="index.html" class="active">House & Garden</a>
-            <a href="svg-coordinates.html">SVG Coordinates</a>
         </nav>
+    </header>
 
-    </div>
-</header>
+    <section class="exercise-hero">
+        <p class="eyebrow">COS30045 · DATA VISUALISATION · EXERCISE 4.1</p>
+        <h1>SVG House & Garden</h1>
+        <p>Exercise 4.1 explores SVG shapes, coordinates, fills, strokes, paths, groups and transformations through a house and garden illustration.</p>
+    </section>
 
 
-<main>
+
+<main class="exercise-main">
 
     <section class="intro-grid">
 
@@ -947,72 +1031,239 @@
 
             <h3>Step 3 & 4 — Changes Made</h3>
 
-            <ul>
-                <li>
-                    Changed the house body fill colour from orange to sky blue.
-                </li>
+            <p>
+                The table below compares the original SVG with the customised
+                version and shows the relevant SVG coordinates and attributes.
+            </p>
 
-                <li>
-                    Changed the house outline to a darker blue stroke for stronger contrast.
-                </li>
+            <div class="changes-table-wrapper">
 
-                <li>
-                    Changed the roof fill colour and increased the roof stroke width.
-                </li>
+                <table class="changes-table">
 
-                <li>
-                    Moved the chimney from the right side of the roof to the left side.
-                </li>
+                    <thead>
+                        <tr>
+                            <th>SVG Element</th>
+                            <th>Original Version</th>
+                            <th>Customised / Step 4 Version</th>
+                            <th>SVG Coordinates / Attributes</th>
+                        </tr>
+                    </thead>
 
-                <li>
-                    Added a chimney cap using an additional rectangle element.
-                </li>
+                    <tbody>
 
-                <li>
-                    Adjusted the sun position, size and stroke.
-                </li>
+                        <tr>
+                            <td><strong>House Body</strong></td>
+                            <td>Orange fill with a brown outline.</td>
+                            <td>Changed to sky blue with a darker blue stroke.</td>
+                            <td>
+                                <code>x="300"</code><br>
+                                <code>y="250"</code><br>
+                                <code>width="320"</code><br>
+                                <code>height="260"</code><br><br>
+                                Original: <code>fill="#d47b39"</code><br>
+                                Customised: <code>fill="#6ec1e4"</code><br>
+                                Custom stroke: <code>stroke="#3a7ea1"</code>
+                            </td>
+                        </tr>
 
-                <li>
-                    Added a second cloud using multiple ellipse elements.
-                </li>
+                        <tr>
+                            <td><strong>Roof</strong></td>
+                            <td>Brown-orange roof with a 4-unit stroke.</td>
+                            <td>Changed to a darker brown and increased the stroke width.</td>
+                            <td>
+                                <code>points="260,250 460,90 660,250"</code><br><br>
+                                Original: <code>fill="#9b4f24"</code>,
+                                <code>stroke-width="4"</code><br>
+                                Customised: <code>fill="#7a3f22"</code>,
+                                <code>stroke-width="5"</code>
+                            </td>
+                        </tr>
 
-                <li>
-                    Added bushes on both sides of the house.
-                </li>
+                        <tr>
+                            <td><strong>Chimney</strong></td>
+                            <td>Positioned on the right side of the roof.</td>
+                            <td>Moved to the left side and a chimney cap was added.</td>
+                            <td>
+                                Original chimney:
+                                <code>x="540"</code>,
+                                <code>y="120"</code><br><br>
+                                Custom chimney:
+                                <code>x="360"</code>,
+                                <code>y="125"</code><br><br>
+                                Chimney cap:
+                                <code>x="353"</code>,
+                                <code>y="118"</code>,
+                                <code>width="64"</code>,
+                                <code>height="12"</code>
+                            </td>
+                        </tr>
 
-                <li>
-                    Repositioned the flowers and added leaves.
-                </li>
+                        <tr>
+                            <td><strong>Sun</strong></td>
+                            <td>Circle centred at (760,100) with radius 55.</td>
+                            <td>Moved slightly upward, reduced in size and given a stroke.</td>
+                            <td>
+                                Original:
+                                <code>cx="760"</code>,
+                                <code>cy="100"</code>,
+                                <code>r="55"</code><br><br>
+                                Customised:
+                                <code>cx="760"</code>,
+                                <code>cy="95"</code>,
+                                <code>r="50"</code>
+                            </td>
+                        </tr>
 
-                <li>
-                    Used the transform attribute to rotate the flower leaves.
-                </li>
+                        <tr>
+                            <td><strong>Second Cloud</strong></td>
+                            <td>Not present.</td>
+                            <td>Added using three ellipse elements.</td>
+                            <td>
+                                Ellipse 1:
+                                <code>cx="650"</code>,
+                                <code>cy="150"</code><br>
+                                Ellipse 2:
+                                <code>cx="680"</code>,
+                                <code>cy="150"</code><br>
+                                Ellipse 3:
+                                <code>cx="665"</code>,
+                                <code>cy="135"</code>
+                            </td>
+                        </tr>
 
-                <li>
-                    Changed the walkway fill, stroke colour and stroke width.
-                </li>
+                        <tr>
+                            <td><strong>Walkway</strong></td>
+                            <td>Beige path with a 4-unit stroke.</td>
+                            <td>Updated fill colour, stroke colour and stroke width.</td>
+                            <td>
+                                Starts at <code>M 460 510</code><br><br>
+                                Original:
+                                <code>fill="#d6b47b"</code>,
+                                <code>stroke="#b48b54"</code>,
+                                <code>stroke-width="4"</code><br>
+                                Customised:
+                                <code>fill="#d8b57c"</code>,
+                                <code>stroke="#9d7544"</code>,
+                                <code>stroke-width="5"</code>
+                            </td>
+                        </tr>
 
-                <li>
-                    Added additional stroke styling to the tree trunk and door knob.
-                </li>
+                        <tr>
+                            <td><strong>Left Bush</strong></td>
+                            <td>Not present.</td>
+                            <td>Added using an ellipse.</td>
+                            <td>
+                                <code>cx="255"</code>,
+                                <code>cy="465"</code><br>
+                                <code>rx="45"</code>,
+                                <code>ry="28"</code>
+                            </td>
+                        </tr>
 
-                <li>
-                    Grouped both windows using the SVG
-                    <strong>&lt;g&gt;</strong> element so shared styling
-                    could be applied consistently.
-                </li>
+                        <tr>
+                            <td><strong>Right Bush</strong></td>
+                            <td>Not present.</td>
+                            <td>Added using an ellipse.</td>
+                            <td>
+                                <code>cx="650"</code>,
+                                <code>cy="470"</code><br>
+                                <code>rx="48"</code>,
+                                <code>ry="30"</code>
+                            </td>
+                        </tr>
 
-                <li>
-                    Used
-                    <strong>transform="translate(...)"</strong>
-                    to position the left and right window groups.
-                </li>
+                        <tr>
+                            <td><strong>Flowers</strong></td>
+                            <td>Three flower heads and stems.</td>
+                            <td>Flower positions were changed and leaves were added.</td>
+                            <td>
+                                Original centres:
+                                <code>(720,470)</code>,
+                                <code>(750,490)</code>,
+                                <code>(785,465)</code><br><br>
+                                Customised centres:
+                                <code>(720,455)</code>,
+                                <code>(755,475)</code>,
+                                <code>(790,450)</code>
+                            </td>
+                        </tr>
 
-                <li>
-                    Rebuilt each window using local coordinates beginning at
-                    <strong>(0,0)</strong> inside its own group.
-                </li>
-            </ul>
+                        <tr>
+                            <td><strong>Flower Leaves</strong></td>
+                            <td>Not present.</td>
+                            <td>Added as ellipses and rotated using <code>transform</code>.</td>
+                            <td>
+                                Examples:<br>
+                                <code>rotate(-25 710 490)</code><br>
+                                <code>rotate(25 765 500)</code><br>
+                                <code>rotate(-25 780 485)</code>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Tree Trunk</strong></td>
+                            <td>Brown rectangle without an outline.</td>
+                            <td>Added a darker stroke around the trunk.</td>
+                            <td>
+                                <code>x="120"</code>,
+                                <code>y="315"</code><br>
+                                <code>width="35"</code>,
+                                <code>height="150"</code><br>
+                                Custom stroke:
+                                <code>stroke="#6d3d1f"</code>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Door Knob</strong></td>
+                            <td>Small yellow circle without a stroke.</td>
+                            <td>Radius increased and a darker stroke was added.</td>
+                            <td>
+                                Original:
+                                <code>cx="485"</code>,
+                                <code>cy="450"</code>,
+                                <code>r="6"</code><br><br>
+                                Customised:
+                                <code>cx="485"</code>,
+                                <code>cy="450"</code>,
+                                <code>r="7"</code>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Windows</strong></td>
+                            <td>
+                                Left and right windows were coded separately
+                                using individual rectangles and lines.
+                            </td>
+                            <td>
+                                Grouped using <code>&lt;g&gt;</code> with shared styling,
+                                then positioned using <code>transform="translate(...)"</code>.
+                            </td>
+                            <td>
+                                Left window:
+                                <code>translate(340, 310)</code><br><br>
+                                Right window:
+                                <code>translate(515, 310)</code><br><br>
+                                Local rectangle:
+                                <code>x="0"</code>,
+                                <code>y="0"</code>,
+                                <code>width="70"</code>,
+                                <code>height="70"</code>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <p class="table-note">
+                All coordinates are based on the SVG
+                <code>viewBox="0 0 900 600"</code>. The origin
+                <code>(0,0)</code> is at the top-left of the SVG canvas.
+            </p>
 
         </div>
 
@@ -1030,48 +1281,34 @@
 </main>
 
 
-<footer>
 
-    <div class="footer-inner">
+    <section class="ai-panel">
+        <h2>AI Declaration</h2>
+        <p>Generative AI, specifically ChatGPT, was used to assist with the development of this exercise. AI assistance was used for guidance on SVG syntax, webpage styling, coordinate explanations, customisation ideas, grouping, transformations and code structure. The generated material was reviewed, tested and adapted before being included in the final work.</p>
 
-        <div class="declaration">
+        <div class="student-meta">
+            <span><strong>Name:</strong> Darrshan A/L Muraleesvaran</span>
+            <span><strong>Student ID:</strong> 105965528</span>
+            <span><strong>Unit:</strong> COS30045 Data Visualisation</span>
+        </div>
+    </section>
 
-            <h2>AI Declaration</h2>
+    <footer class="site-footer">
+        <div class="footer-inner">
 
-            <p>
-                Generative AI, specifically ChatGPT, was used to assist
-                with the development of this exercise. AI assistance was
-                used for guidance on SVG syntax, webpage styling,
-                coordinate explanations, customisation ideas, grouping,
-                transformations and code structure. The generated material
-                was reviewed, tested and adapted before being included in
-                the final work.
-            </p>
+            <div>
+                <p class="footer-brand">ENERGY VIEW</p>
+                <p class="footer-description">COS30045 Data Visualisation</p>
+            </div>
+
+            <div class="footer-meta">
+                <p>&copy; 2026 Darrshan Muraleesvaran</p>
+                <p>Exercise 4.1 · SVG House & Garden</p>
+            </div>
 
         </div>
+    </footer>
 
-        <div class="student-details">
-
-            <span>
-                <strong>Name:</strong>
-                Darrshan A/L Muraleesvaran
-            </span>
-
-            <span>
-                <strong>Student ID:</strong>
-                105965528
-            </span>
-
-            <span>
-                <strong>Unit:</strong>
-                COS30045 Data Visualisation
-            </span>
-
-        </div>
-
-    </div>
-
-</footer>
 
 </body>
 </html>
