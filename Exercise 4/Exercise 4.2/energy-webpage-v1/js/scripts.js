@@ -68,7 +68,6 @@ if (calculateButton) {
         const yearlyEnergy =
             dailyEnergy * 365;
 
-
         const pricePerKWh =
             price / 100;
 
@@ -105,7 +104,7 @@ if (calculateButton) {
 
 // ------------------------------------------------------
 // D3 BAR CHART - TV BRAND COUNT
-// EXERCISE 4.4 / 4.5 / 4.6
+// EXERCISES 4.4 - 4.7
 // ------------------------------------------------------
 
 const brandChart =
@@ -119,7 +118,7 @@ if (brandChart) {
 
 
             // --------------------------------------------------
-            // CONVERT CSV COUNT VALUES TO NUMBERS
+            // CONVERT COUNT VALUES TO NUMBERS
             // --------------------------------------------------
 
             data.forEach(function (d) {
@@ -176,7 +175,7 @@ if (brandChart) {
 
 
             // --------------------------------------------------
-            // SORT HIGHEST TO LOWEST
+            // SORT DATA FROM HIGHEST TO LOWEST
             // --------------------------------------------------
 
             data.sort(function (a, b) {
@@ -197,7 +196,7 @@ if (brandChart) {
 
 
             // --------------------------------------------------
-            // KEEP TOP 10 TV BRANDS
+            // KEEP TOP 10 BRANDS
             // --------------------------------------------------
 
             const top10 =
@@ -212,10 +211,7 @@ if (brandChart) {
 
 
             // --------------------------------------------------
-            // EXERCISE 4.6 - CHART DIMENSIONS
-            //
-            // The chart is deliberately constrained so that
-            // scales are required to fit the data.
+            // CHART DIMENSIONS
             // --------------------------------------------------
 
             const width = 600;
@@ -223,10 +219,16 @@ if (brandChart) {
 
 
             const margin = {
+
                 top: 40,
-                right: 50,
+
+                right: 60,
+
                 bottom: 70,
+
+                // Extra space for the brand labels
                 left: 150
+
             };
 
 
@@ -244,7 +246,7 @@ if (brandChart) {
 
 
             // --------------------------------------------------
-            // CLEAR EXISTING CHART
+            // CLEAR OLD CHART
             // --------------------------------------------------
 
             d3.select("#brand-chart")
@@ -253,11 +255,12 @@ if (brandChart) {
 
 
             // --------------------------------------------------
-            // CREATE RESPONSIVE SVG
+            // CREATE SVG
             // --------------------------------------------------
 
             const svg = d3
                 .select("#brand-chart")
+
                 .append("svg")
 
                 .attr(
@@ -280,9 +283,6 @@ if (brandChart) {
             // --------------------------------------------------
             // EXERCISE 4.6
             // LINEAR SCALE FOR COUNT DATA
-            //
-            // DOMAIN = data values
-            // RANGE  = available pixels
             // --------------------------------------------------
 
             const xScale = d3
@@ -303,9 +303,6 @@ if (brandChart) {
             // --------------------------------------------------
             // EXERCISE 4.6
             // BAND SCALE FOR BRAND CATEGORIES
-            //
-            // Each brand receives its own section
-            // of the available vertical space.
             // --------------------------------------------------
 
             const yScale = d3
@@ -341,8 +338,10 @@ if (brandChart) {
 
                 .attr(
                     "transform",
-                    `translate(${margin.left},
-                    ${margin.top + chartHeight})`
+                    `translate(
+                        ${margin.left},
+                        ${margin.top + chartHeight}
+                    )`
                 )
 
                 .call(
@@ -361,63 +360,82 @@ if (brandChart) {
 
 
 
-            // --------------------------------------------------
-            // DRAW BARS
-            //
-            // Lecturer's Exercise 4.6 method:
-            //
-            // width  -> xScale(count)
-            // height -> yScale.bandwidth()
-            // y      -> yScale(brand)
-            // --------------------------------------------------
+            // ==================================================
+            // EXERCISE 4.7
+            // GROUP EACH BAR AND ITS LABELS TOGETHER
+            // ==================================================
 
-            svg.selectAll(".bar")
+            const barAndLabel = svg
+
+                .selectAll(".bar-group")
 
                 .data(top10)
 
-                .join("rect")
+                .join("g")
+
+                .attr(
+                    "class",
+                    "bar-group"
+                )
+
+                .attr(
+                    "transform",
+                    function (d) {
+
+                        return (
+                            "translate(0," +
+                            yScale(d.Brand_Reg) +
+                            ")"
+                        );
+
+                    }
+                );
+
+
+
+            // --------------------------------------------------
+            // STEP 3
+            // ADD RECTANGLES TO EACH GROUP
+            // --------------------------------------------------
+
+            barAndLabel
+
+                .append("rect")
 
                 .attr(
                     "class",
                     "bar"
                 )
 
-
-                // Start bars after the brand labels
+                // Leave room on left for brand labels
                 .attr(
                     "x",
                     margin.left
                 )
 
-
-                // Position each category using scaleBand
+                // y-position now comes from the group
                 .attr(
                     "y",
-                    function (d) {
-                        return yScale(
-                            d.Brand_Reg
-                        );
-                    }
+                    0
                 )
 
-
-                // Numerical count mapped to pixel width
+                // Count converted to pixel width
                 .attr(
                     "width",
                     function (d) {
+
                         return xScale(
                             d["Count(SoldIn)"]
                         );
+
                     }
                 )
 
-
-                // Bar thickness calculated by scaleBand
+                // Band scale controls bar thickness
                 .attr(
                     "height",
                     yScale.bandwidth()
                 )
-
 
                 .attr(
                     "rx",
@@ -437,22 +455,78 @@ if (brandChart) {
 
 
             // --------------------------------------------------
-            // VALUE LABELS
+            // STEP 4
+            // ADD BRAND/CATEGORY LABEL
             // --------------------------------------------------
 
-            svg.selectAll(".value-label")
+            barAndLabel
 
-                .data(top10)
+                .append("text")
 
-                .join("text")
+                .text(
+                    function (d) {
+
+                        return d.Brand_Reg;
+
+                    }
+                )
+
+                .attr(
+                    "class",
+                    "brand-label"
+                )
+
+                .attr(
+                    "x",
+                    margin.left - 10
+                )
+
+                .attr(
+                    "y",
+                    yScale.bandwidth() / 2
+                )
+
+                .attr(
+                    "text-anchor",
+                    "end"
+                )
+
+                .attr(
+                    "dominant-baseline",
+                    "middle"
+                )
+
+                .style(
+                    "font-size",
+                    "13px"
+                );
+
+
+
+            // --------------------------------------------------
+            // STEP 5
+            // ADD COUNT VALUE LABEL
+            // --------------------------------------------------
+
+            barAndLabel
+
+                .append("text")
+
+                .text(
+                    function (d) {
+
+                        return d3.format(",")(
+                            d["Count(SoldIn)"]
+                        );
+
+                    }
+                )
 
                 .attr(
                     "class",
                     "value-label"
                 )
 
-
-                // Place count just after the end of each bar
                 .attr(
                     "x",
                     function (d) {
@@ -468,48 +542,30 @@ if (brandChart) {
                     }
                 )
 
-
                 .attr(
                     "y",
-                    function (d) {
-
-                        return (
-                            yScale(
-                                d.Brand_Reg
-                            ) +
-                            yScale.bandwidth() / 2
-                        );
-
-                    }
+                    yScale.bandwidth() / 2
                 )
-
-
-                .attr(
-                    "dominant-baseline",
-                    "middle"
-                )
-
 
                 .attr(
                     "text-anchor",
                     "start"
                 )
 
+                .attr(
+                    "dominant-baseline",
+                    "middle"
+                )
 
-                .text(
-                    function (d) {
-
-                        return d3.format(",")(
-                            d["Count(SoldIn)"]
-                        );
-
-                    }
+                .style(
+                    "font-size",
+                    "13px"
                 );
 
 
 
             // --------------------------------------------------
-            // X AXIS - TV COUNT
+            // X AXIS
             // --------------------------------------------------
 
             svg.append("g")
@@ -533,42 +589,18 @@ if (brandChart) {
                         xScale
                     )
 
-                    .ticks(6)
+                        .ticks(6)
 
-                    .tickFormat(
-                        d3.format(",")
-                    )
+                        .tickFormat(
+                            d3.format(",")
+                        )
 
                 );
 
 
 
             // --------------------------------------------------
-            // Y AXIS - TV BRANDS
-            // --------------------------------------------------
-
-            svg.append("g")
-
-                .attr(
-                    "class",
-                    "y-axis"
-                )
-
-                .attr(
-                    "transform",
-                    `translate(${margin.left},0)`
-                )
-
-                .call(
-                    d3.axisLeft(
-                        yScale
-                    )
-                );
-
-
-
-            // --------------------------------------------------
-            // X AXIS LABEL
+            // X AXIS TITLE
             // --------------------------------------------------
 
             svg.append("text")
@@ -596,43 +628,6 @@ if (brandChart) {
 
                 .text(
                     "Number of television records"
-                );
-
-
-
-            // --------------------------------------------------
-            // Y AXIS LABEL
-            // --------------------------------------------------
-
-            svg.append("text")
-
-                .attr(
-                    "class",
-                    "axis-title"
-                )
-
-                .attr(
-                    "transform",
-                    "rotate(-90)"
-                )
-
-                .attr(
-                    "x",
-                    -(margin.top + chartHeight / 2)
-                )
-
-                .attr(
-                    "y",
-                    22
-                )
-
-                .attr(
-                    "text-anchor",
-                    "middle"
-                )
-
-                .text(
-                    "TV Brand"
                 );
 
 
