@@ -219,8 +219,7 @@ if (brandChart) {
 
         svg.selectAll(".bar")
             .data(top10)
-            .enter()
-            .append("rect")
+            .join("rect")
             .attr("class", "bar")
             .attr("x", function (d) {
                 return xScale(d.Brand_Reg);
