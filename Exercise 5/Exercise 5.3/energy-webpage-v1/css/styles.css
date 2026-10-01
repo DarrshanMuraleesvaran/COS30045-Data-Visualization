@@ -1271,13 +1271,15 @@ body > footer:not(.site-footer) p {
 }
 
 #bar-chart,
-#line-chart {
+#line-chart,
+#donut-chart {
     width: 100%;
     overflow-x: auto;
 }
 
 .bar-chart-svg,
-.line-chart-svg {
+.line-chart-svg,
+.donut-chart-svg {
     width: 100%;
     height: auto;
     display: block;
@@ -1338,4 +1340,11 @@ body > footer:not(.site-footer) p {
     font-size: 14px;
     font-weight: 700;
     fill: green;
+}
+
+.donut-label {
+    font-size: 15px;
+    font-weight: 700;
+    fill: #111827;
+    pointer-events: none;
 }

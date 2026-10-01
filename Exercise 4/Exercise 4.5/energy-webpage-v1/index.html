@@ -536,14 +536,14 @@
                 </p>
 
                 <h2>
-                    Which TV screen type uses the most energy?
+                    Which TV brands appear most often in the dataset?
                 </h2>
 
                 <p>
                     The chart below uses data loaded directly from
-                    <strong>screenTechEnergy.csv</strong> using D3.
-                    It compares the mean labelled annual energy consumption
-                    for each screen technology.
+                    <strong>tvBrandCount.csv</strong> using D3.
+                    It displays the ten brands with the highest number
+                    of television records in the dataset.
                 </p>
 
             </div>
@@ -556,11 +556,11 @@
                     <div>
 
                         <p class="feature-label">
-                            SCREEN TECHNOLOGY
+                            TOP 10 TV BRANDS
                         </p>
 
                         <h3>
-                            Mean energy consumption by screen type
+                            Television records by brand
                         </h3>
 
                     </div>
@@ -568,31 +568,7 @@
                 </div>
 
 
-                <div id="bar-chart"></div>
-
-            </div>
-
-
-            <div class="chart-container">
-
-                <div class="chart-header">
-
-                    <div>
-
-                        <p class="feature-label">
-                            ELECTRICITY MARKET
-                        </p>
-
-                        <h3>
-                            Average spot price of electricity over time
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-                <div id="line-chart"></div>
+                <div id="brand-chart"></div>
 
             </div>
 
@@ -649,7 +625,6 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="js/line-chart.js"></script>
 
 </body>
 

@@ -1270,33 +1270,15 @@ body > footer:not(.site-footer) p {
     line-height: 1.2;
 }
 
-#bar-chart,
-#line-chart {
+#brand-chart {
     width: 100%;
     overflow-x: auto;
 }
 
-.bar-chart-svg,
-.line-chart-svg {
+.brand-chart-svg {
     width: 100%;
     height: auto;
     display: block;
-}
-
-.bar {
-    fill: green;
-}
-
-.average-price-line {
-    fill: none;
-    stroke: green;
-    stroke-width: 2;
-}
-
-.price-point {
-    fill: green;
-    stroke: #ffffff;
-    stroke-width: 1.5;
 }
 
 .grid-lines line {
@@ -1332,10 +1314,4 @@ body > footer:not(.site-footer) p {
     font-size: 14px;
     font-weight: 700;
     fill: #1f2937;
-}
-
-.line-label {
-    font-size: 14px;
-    font-weight: 700;
-    fill: green;
 }
