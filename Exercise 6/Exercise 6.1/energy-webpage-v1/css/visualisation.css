@@ -1,0 +1,64 @@
+#histogram {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.histogram-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.histogram-bar {
+    fill: #606464;
+    stroke: #fffaf0;
+    stroke-width: 2;
+}
+
+.histogram-bar:hover {
+    fill: #e6a52b;
+}
+
+.grid-lines line {
+    stroke: #e5e0d6;
+    stroke-opacity: 1;
+    shape-rendering: crispEdges;
+}
+
+.grid-lines path {
+    stroke-width: 0;
+}
+
+.x-axis text,
+.y-axis text {
+    font-size: 13px;
+    fill: #5a3d2b;
+}
+
+.x-axis path,
+.x-axis line,
+.y-axis path,
+.y-axis line {
+    stroke: #5a3d2b;
+}
+
+.axis-title {
+    font-size: 15px;
+    font-weight: 700;
+    fill: #5a3d2b;
+}
+
+.data-source {
+    margin-top: 34px;
+}
+
+.data-source h3 {
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+}
+
+.data-source a {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
