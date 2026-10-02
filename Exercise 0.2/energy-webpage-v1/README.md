@@ -1,56 +1,18 @@
-# Appliance Energy Consumption Website
+# Exercise 0.2 Energy Webpage Template
 
-This website was created for COS30045 Data Visualisation.
-
-## Purpose
-
-The purpose of this project is to practise:
-
-- HTML page structure
-- CSS styling
-- JavaScript interactivity
-- GitHub version control
-- Basic web development workflow
+This folder contains the reusable base website for the COS30045 data visualisation exercises.
 
 ## Pages
 
-The website contains three pages:
+- `index.html` - homepage and energy calculator.
+- `televisions.html` - explanation of TV energy factors.
+- `about.html` - project overview.
 
-- Home
-- Televisions
-- About Us
+## Assets
 
-## Features
+- `css/styles.css` - site styling.
+- `js/scripts.js` - FAQ and calculator behaviour.
+- `images/` - website images and icons.
+- `data/` - placeholder data folder for later exercises.
 
-The website includes:
-
-- A navigation bar on all pages
-- A clickable power logo that returns to the Home page
-- Hover effects for navigation links
-- An active page indicator
-- Consistent styling using an external CSS file
-- A JavaScript FAQ accordion
-- A footer containing the current year and author name
-- A Generative AI acknowledgement
-
-## Project Structure
-
-```text
-energy-webpage-v1
-│
-├── css
-│   └── styles.css
-│
-├── js
-│   └── scripts.js
-│
-├── images
-│   └── PowerIcon.png
-│
-├── data
-│   └── data.csv
-│
-├── index.html
-├── televisions.html
-├── about.html
-└── README.md
+This template intentionally does not include a Storyboard page.

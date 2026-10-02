@@ -1,22 +1,14 @@
-# Exercise 4 – Introduction to D3.js
+# Exercise 4
 
-In this exercise, you will learn the basics of **D3.js**, a JavaScript library used to create interactive data visualisations on the web.
+Exercise 4 introduces SVG and D3.js basics.
 
-The exercises in this folder guide you through the fundamental concepts needed to build visualisations using D3.
+These exercises build the foundation for later chart work by covering SVG drawing, D3 setup, CSV loading, data binding, and scaling.
 
 ## Exercises
 
-- **Exercise 4.1 – Draw SVGs**  
-  Learn how to create SVG elements that are used to draw graphics on a webpage.
-
-- **Exercise 4.3 – D3 setup**  
-  Set up the D3 library in your webpage.
-
-- **Exercise 4.4 – Load data from CSV**  
-  Learn how to load and read data from a CSV file using D3.
-
-- **Exercise 4.5 – D3 binding and drawing with data**  
-  Bind data to visual elements and draw graphics based on the data.
-
-- **Exercise 4.6 – Scaling charts**  
-  Use D3 scales to map data values to positions in a chart.
+- `Exercise 4.1` - draw SVG elements.
+- `Exercise 4.2` - early D3 webpage copy.
+- `Exercise 4.3` - D3 setup.
+- `Exercise 4.4` - load CSV data with D3.
+- `Exercise 4.5` - bind data and draw with data.
+- `Exercise 4.6` - use scales for chart positioning.

@@ -1,56 +1,16 @@
-# Appliance Energy Consumption Website
+# Exercise 5.1 Energy Webpage
 
-This website was created for COS30045 Data Visualisation.
+This webpage contains the Exercise 5.1 D3 vertical bar chart.
 
-## Purpose
+## Visualisation
 
-The purpose of this project is to practise:
+The chart compares mean labelled annual energy consumption for TV screen technologies.
 
-- HTML page structure
-- CSS styling
-- JavaScript interactivity
-- GitHub version control
-- Basic web development workflow
+## Main Files
 
-## Pages
+- `index.html`
+- `css/styles.css`
+- `js/scripts.js`
+- `data/screenTechEnergy.csv`
 
-The website contains three pages:
-
-- Home
-- Televisions
-- About Us
-
-## Features
-
-The website includes:
-
-- A navigation bar on all pages
-- A clickable power logo that returns to the Home page
-- Hover effects for navigation links
-- An active page indicator
-- Consistent styling using an external CSS file
-- A JavaScript FAQ accordion
-- A footer containing the current year and author name
-- A Generative AI acknowledgement
-
-## Project Structure
-
-```text
-energy-webpage-v1
-│
-├── css
-│   └── styles.css
-│
-├── js
-│   └── scripts.js
-│
-├── images
-│   └── PowerIcon.png
-│
-├── data
-│   └── data.csv
-│
-├── index.html
-├── televisions.html
-├── about.html
-└── README.md
+Run through a local server so D3 can load the CSV file.
