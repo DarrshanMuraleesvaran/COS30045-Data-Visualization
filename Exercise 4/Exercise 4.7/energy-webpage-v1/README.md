@@ -1,6 +1,6 @@
-# Exercise 4.6 Energy Webpage
+# Exercise 4.7 Energy Webpage
 
-This webpage contains the scaling work for Exercise 4.6.
+This webpage contains the D3 bar chart work for Exercise 4.7.
 
 ## Main Files
 
@@ -9,4 +9,4 @@ This webpage contains the scaling work for Exercise 4.6.
 - `js/main.js`
 - `js/scripts.js`
 
-The exercise uses D3 scales to place visual marks according to data values.
+The exercise uses D3 to load `tvBrandCount.csv`, draw bars and labels, and add chart axes.
